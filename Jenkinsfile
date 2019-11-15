@@ -47,6 +47,14 @@ sh 'gradle --b ./Tienda/build.gradle test'
 
 }
 }
+stage('Static Code Analysis') {
+steps {
+ withSonarQubeEnv('Sonar'){
+     sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+ }   
+sh 'gradle --b ./Tienda/build.gradle test'
 
+}
+}
     }
 }
