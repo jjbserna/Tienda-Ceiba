@@ -37,6 +37,7 @@ url:'https://github.com/jjbserna/Tienda-Ceiba.git'
 stage('Gradle Build') {
 steps{ 
 sh '​gradle​ --b ​./Tienda/build.gradle clean compileJava​'
+
 }
 }	
 stage('Compile & Unit Tests') {
