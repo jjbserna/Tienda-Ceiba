@@ -54,7 +54,6 @@ withSonarQubeEnv(​'Sonar'​) {sh "${tool name: '​SonarScanner​', type:'hu
 }
 }
 }
-
         stage('Build') {
             steps {
 echo "------------>Build<------------" 
