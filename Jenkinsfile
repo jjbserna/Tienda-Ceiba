@@ -48,12 +48,5 @@ sh '​gradle --b ./Tienda/build.gradle test​'
 }
 }
 
-
-        stage('Build') {
-            steps {
-echo "------------>Build<------------" 
-sh '​gradle --b ./Tienda/build.gradle -x test'​
-            }
-        }
     }
 }
