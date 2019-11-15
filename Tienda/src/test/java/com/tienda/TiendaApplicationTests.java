@@ -1,10 +1,10 @@
-package com.puebaEjemplo.PruebaC;
+package com.tienda;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PruebaCApplicationTests {
+class TiendaApplicationTests {
 
 	@Test
 	void contextLoads() {
