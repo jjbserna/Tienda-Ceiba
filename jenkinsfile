@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+stage('Gradle Build') {
+    if (isUnix()) {
+        sh './gradlew clean build'
+    } else {
+        bat 'gradlew.bat clean build'
+    }
+}	
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+    if (isUnix()) {
+        sh './gradlew clean test --no-daemon'
+    } else {
+        bat './gradlew clean test --no-daemon'
+    }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+    if (isUnix()) {
+        sh './gradlew publish --no-daemon'
+    } else {
+        bat './gradlew publish --no-daemon'
+    }
+            }
+        }
+    }
+}
