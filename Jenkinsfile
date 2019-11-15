@@ -36,8 +36,8 @@ url:'https://github.com/jjbserna/Tienda-Ceiba.git'
  
 stage('Build project') {
 steps {
-sh 'gradle --b ./tiendamovie/build.gradle clean'
-sh 'gradle --b ./tiendamovie/build.gradle build'
+sh 'gradle --b ./Tienda/build.gradle test​'
+sh 'gradle --b ./Tienda/build.gradle test​'
 }
 }
 stage('Compile & Unit Tests') {
