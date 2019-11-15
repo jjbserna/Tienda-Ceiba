@@ -40,13 +40,13 @@ sh 'gradle --b ./Tienda/build.gradle clean'
 sh 'gradle --b ./Tienda/build.gradle build'
 }
 }
-stage('Compile & Unit Tests') {
-steps{ 
-echo 'Testing..'
 
-sh '​gradle--b ./Tienda/build.gradle test​'
+stage('Compile & Unit Tests') 
+{
+steps
+{
+sh '​gradle --b ./build.gradle test​'
+} 
 }
-}
-
     }
 }
