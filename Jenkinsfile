@@ -62,13 +62,6 @@ sh 'gradle --b ./Tienda/build.gradle build -x test'
 
 }
 }
-post{
-    failure{
-        mail (to: '​jeison.barbosa@ceiba.com.co​',subject: "Failed Pipeline:${currentBuild.fullDisplayName}","Something is wrong with ${env.BUILD_URL}")
-    }
-}
-success{
-    junit 'Tienda/build/test-results/test/*.xml'
-}
+
     }
 }
