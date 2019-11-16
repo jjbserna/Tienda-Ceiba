@@ -64,4 +64,7 @@ sh 'gradle --b ./Tienda/build.gradle build -x test'
 }
 
     }
+success{
+    junit 'Tienda/build/test-results/test/*.xml'
+}
 }
