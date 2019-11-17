@@ -64,7 +64,7 @@ pipeline {
                     }
                     post{
                         failure{
-                            mail (to: '​yuliana.canas@ceiba.com.co​',subject: "​Failed Pipeline:${currentBuild.fullDisplayName}​",body: "​Something is wrong with ${env.BUILD_URL}​"
+                            mail (to: '​jeison.barbosa@ceiba.com.co​',subject: "​Failed Pipeline:${currentBuild.fullDisplayName}​",body: "​Something is wrong with ${env.BUILD_URL}​")
                         }
                     }                
 }
