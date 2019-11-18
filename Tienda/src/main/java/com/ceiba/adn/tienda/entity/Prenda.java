@@ -30,6 +30,43 @@ public class Prenda implements Serializable  {
 	@Column(name="descripcion")
 	private String descripcion;
 
+	@Column(name="estilo")
+	private String estilo;
+	
+	@Column(name="estado")
+	private boolean estado;
+	
+	@Column(name="precio")
+	private double precio;
+	/**
+	 * @return the estilo
+	 */
+	public String getEstilo() {
+		return estilo;
+	}
+
+	/**
+	 * @param estilo the estilo to set
+	 */
+	public void setEstilo(String estilo) {
+		this.estilo = estilo;
+	}
+
+	/**
+	 * @return the precio
+	 */
+	public double getPrecio() {
+		return precio;
+	}
+
+	/**
+	 * @param precio the precio to set
+	 */
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+
 	/**
 	 * @return the idPrenda
 	 */
@@ -57,5 +94,21 @@ public class Prenda implements Serializable  {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
+	/**
+	 * @return the estado
+	 */
+	public boolean isEstado() {
+		return estado;
+	}
+
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	
+	
 
 }
