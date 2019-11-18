@@ -1,4 +1,4 @@
-package com.tienda;
+package com.ceiba.adn.tienda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
