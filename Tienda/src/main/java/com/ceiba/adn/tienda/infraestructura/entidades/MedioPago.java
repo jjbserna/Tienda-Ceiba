@@ -39,4 +39,62 @@ public class MedioPago implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
 	private Prenda clienteId;
+
+	/**
+	 * @return the idMedioPago
+	 */
+	public int getIdMedioPago() {
+		return idMedioPago;
+	}
+
+	/**
+	 * @param idMedioPago the idMedioPago to set
+	 */
+	public void setIdMedioPago(int idMedioPago) {
+		this.idMedioPago = idMedioPago;
+	}
+
+	/**
+	 * @return the banco
+	 */
+	public String getBanco() {
+		return banco;
+	}
+
+	/**
+	 * @param banco the banco to set
+	 */
+	public void setBanco(String banco) {
+		this.banco = banco;
+	}
+
+	/**
+	 * @return the numeroCuenta
+	 */
+	public int getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+	/**
+	 * @param numeroCuenta the numeroCuenta to set
+	 */
+	public void setNumeroCuenta(int numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
+
+	/**
+	 * @return the clienteId
+	 */
+	public Prenda getClienteId() {
+		return clienteId;
+	}
+
+	/**
+	 * @param clienteId the clienteId to set
+	 */
+	public void setClienteId(Prenda clienteId) {
+		this.clienteId = clienteId;
+	}
+	
+	
 }
