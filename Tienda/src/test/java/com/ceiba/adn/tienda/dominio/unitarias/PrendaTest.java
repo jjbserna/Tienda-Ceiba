@@ -2,9 +2,9 @@
  * 
  */
 package com.ceiba.adn.tienda.dominio.unitarias;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 import com.ceiba.adn.tienda.dominio.entidades.Prenda;
 import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
 
