@@ -42,7 +42,7 @@ pipeline {
                         stage('Compile & Unit Tests') {
                             steps {
                             sh 'gradle --b ./Tienda/build.gradle test'
-                            sh './gradlew --b .Tienda/build.gradle jacocoTestReport'
+                            sh './gradlew --b ./Tienda/build.gradle jacocoTestReport'
 
                             }
                         }
