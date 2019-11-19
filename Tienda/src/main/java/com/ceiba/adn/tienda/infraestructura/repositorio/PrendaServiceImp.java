@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.dominio.repositorio;
+package com.ceiba.adn.tienda.infraestructura.repositorio;
 
 import java.util.List;
 
