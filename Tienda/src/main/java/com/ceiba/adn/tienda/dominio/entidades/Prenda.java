@@ -9,16 +9,12 @@ package com.ceiba.adn.tienda.dominio.entidades;
  */
 public class Prenda {
 
-
-	
 	private String descripcion;
 	private String estilo;
 	private boolean estado;
 	private double precio;
 	private int stock;
 
-	
-	
 	/**
 	 * @param idPrenda
 	 * @param descripcion
@@ -34,8 +30,6 @@ public class Prenda {
 		this.precio = precio;
 		this.stock = stock;
 	}
-
-
 
 	/**
 	 * @return the descripcion
@@ -106,6 +100,5 @@ public class Prenda {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	
-	
+
 }

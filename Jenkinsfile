@@ -42,6 +42,7 @@ pipeline {
                         stage('Compile & Unit Tests') {
                             steps {
                             sh 'gradle --b ./Tienda/build.gradle test'
+                            sh './gradlew --b .Tienda/build.gradle jacocoTestReport'
 
                             }
                         }
@@ -69,5 +70,5 @@ pipeline {
                         success{
                             junit 'Tienda/build/test-results/test/*.xml'
                         }
-                    }                
+                    }
 }
