@@ -18,7 +18,7 @@ import com.ceiba.adn.tienda.infraestructura.entidades.Prenda;
  *
  */
 /**
- * @author Jeison Julián Barbosa Serna<br>
+ * @author Jeison Julian Barbosa Serna<br>
  *         Email: jjbarser@gmail.com<br>
  * 
  * @date 18/11/2019
