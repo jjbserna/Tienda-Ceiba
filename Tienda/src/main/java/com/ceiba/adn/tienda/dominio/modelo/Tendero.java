@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.dominio.entidades;
+package com.ceiba.adn.tienda.dominio.modelo;
 
 /**
  * @author jeison.barbosa
@@ -9,4 +9,6 @@ package com.ceiba.adn.tienda.dominio.entidades;
  */
 public class Tendero {
 
+	
+	
 }

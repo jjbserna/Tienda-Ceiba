@@ -14,5 +14,6 @@ import com.ceiba.adn.tienda.infraestructura.entidades.Prenda;
  */
 public interface IPrendaRepositorio extends JpaRepository<Prenda, Integer>{
 
+	Prenda findByCodigoPrenda(int codigoPrenda);
 	
 }

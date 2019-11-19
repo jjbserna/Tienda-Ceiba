@@ -1,14 +1,14 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.dominio.entidades;
+package com.ceiba.adn.tienda.dominio.modelo;
 
 /**
  * @author jeison.barbosa
  *
  */
 public class Prenda {
-
+	private int codigoPrenda;
 	private String descripcion;
 	private String estilo;
 	private boolean estado;
@@ -23,12 +23,28 @@ public class Prenda {
 	 * @param precio
 	 * @param stock
 	 */
-	public Prenda(String descripcion, String estilo, boolean estado, double precio, int stock) {
+	public Prenda(int codigoPrenda, String descripcion, String estilo, boolean estado, double precio, int stock) {
+		this.codigoPrenda=codigoPrenda;
 		this.descripcion = descripcion;
 		this.estilo = estilo;
 		this.estado = estado;
 		this.precio = precio;
 		this.stock = stock;
+		
+	}
+
+	/**
+	 * @return the codigoPrenda
+	 */
+	public int getCodigoPrenda() {
+		return codigoPrenda;
+	}
+
+	/**
+	 * @param codigoPrenda the codigoPrenda to set
+	 */
+	public void setCodigoPrenda(int codigoPrenda) {
+		this.codigoPrenda = codigoPrenda;
 	}
 
 	/**
