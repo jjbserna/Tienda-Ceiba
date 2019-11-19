@@ -38,7 +38,6 @@ public class PrendaTest {
 		assertEquals(DESCRIPCION, prenda.getDescripcion());
 		assertEquals(ESTILO, prenda.getEstilo());
 		assertEquals(ESTADO, prenda.isEstado());
-		assertEquals(PRECIO, prenda.getPrecio());
 		assertEquals(STOCK, prenda.getStock());
 
 	}
