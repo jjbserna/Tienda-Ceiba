@@ -35,7 +35,8 @@ pipeline {
                         stage('Build project') {
                             steps {
                             sh 'gradle --b ./Tienda/build.gradle clean'
-                            sh 'gradle --b ./Tienda/build.gradle build'
+                            sh '​gradle --b ./Tienda/build.gradle compileJava​' 
+                            sh '​gradle --b ./Tienda/build.gradle compileTestJava​'
                             }
                         }
 
@@ -51,7 +52,6 @@ pipeline {
                                 withSonarQubeEnv('Sonar'){
                                     sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
                                 }   
-                            sh 'gradle --b ./Tienda/build.gradle test'
 
                             }
                         }
