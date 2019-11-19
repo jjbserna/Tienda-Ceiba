@@ -35,8 +35,8 @@ pipeline {
                         stage('Build project') {
                             steps {
                             sh 'gradle --b ./Tienda/build.gradle clean'
-                            sh '​gradle --b ./Tienda/build.gradle compileJava​' 
-                            sh '​gradle --b ./Tienda/build.gradle compileTestJava​'
+                            sh 'gradle --b ./Tienda/build.gradle compileJava' 
+                            sh 'gradle --b ./Tienda/build.gradle compileTestJava'
                             }
                         }
 
