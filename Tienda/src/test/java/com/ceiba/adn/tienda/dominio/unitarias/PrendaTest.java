@@ -2,10 +2,8 @@
  * 
  */
 package com.ceiba.adn.tienda.dominio.unitarias;
-
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.ceiba.adn.tienda.dominio.entidades.Prenda;
 import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
@@ -16,6 +14,7 @@ import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
  * @author jeison.barbosa
  *
  */
+ 
 public class PrendaTest {
 	
 	private static final String DESCRIPCION = "Camisa DevOps";
@@ -25,8 +24,8 @@ public class PrendaTest {
 	private static final int STOCK = 100;
 	
 	
-	@Test
-	public void crearLibroTest() {
+@Test
+	public void crearPrendaTest() {
 
 		// arrange
 		PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder().conDescripcion(DESCRIPCION).conEstilo(ESTILO).conEstado(ESTADO).conPrecio(PRECIO).conStock(STOCK);
@@ -36,10 +35,6 @@ public class PrendaTest {
 
 		// assert
 		assertEquals(DESCRIPCION, prenda.getDescripcion());
-		assertEquals(ESTILO, prenda.getEstilo());
-		assertEquals(ESTADO, prenda.isEstado());
-		assertEquals(STOCK, prenda.getStock());
-
 	}
 
 }
