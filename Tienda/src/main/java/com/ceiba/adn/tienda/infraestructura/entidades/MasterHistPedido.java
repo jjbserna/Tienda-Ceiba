@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.entity;
+package com.ceiba.adn.tienda.infraestructura.entidades;
 
 import java.io.Serializable;
 import java.util.Date;

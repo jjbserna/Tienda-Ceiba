@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.entity;
+package com.ceiba.adn.tienda.infraestructura.entidades;
 
 import java.io.Serializable;
 
@@ -38,6 +38,9 @@ public class Prenda implements Serializable  {
 	
 	@Column(name="precio")
 	private double precio;
+	
+	@Column(name="stock")
+	private int stock;
 	/**
 	 * @return the estilo
 	 */
@@ -107,6 +110,20 @@ public class Prenda implements Serializable  {
 	 */
 	public void setEstado(boolean estado) {
 		this.estado = estado;
+	}
+
+	/**
+	 * @return the stock
+	 */
+	public int getStock() {
+		return stock;
+	}
+
+	/**
+	 * @param stock the stock to set
+	 */
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 	
 	
