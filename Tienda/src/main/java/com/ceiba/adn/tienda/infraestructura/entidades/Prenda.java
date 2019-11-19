@@ -27,8 +27,8 @@ public class Prenda implements Serializable  {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idPrenda;
 	
-	@Column(name="codigo_prenda", nullable = false)
-	private String codigoPrenda;
+	@Column(name="codigo_prenda", nullable = false, unique = true)
+	private int codigoPrenda;
 	
 	@Column(name="descripcion")
 	private String descripcion;
@@ -46,17 +46,18 @@ public class Prenda implements Serializable  {
 	private int stock;
 	
 	
+
 	/**
 	 * @return the codigoPrenda
 	 */
-	public String getCodigoPrenda() {
+	public int getCodigoPrenda() {
 		return codigoPrenda;
 	}
 
 	/**
 	 * @param codigoPrenda the codigoPrenda to set
 	 */
-	public void setCodigoPrenda(String codigoPrenda) {
+	public void setCodigoPrenda(int codigoPrenda) {
 		this.codigoPrenda = codigoPrenda;
 	}
 
