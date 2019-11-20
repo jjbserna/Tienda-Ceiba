@@ -1,10 +1,10 @@
 package com.ceiba.adn.tienda.dominio.excepcion;
 
-public class VentaException extends RuntimeException{
+public class ExceptionVenta extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 	
-	public VentaException(String message) {
+	public ExceptionVenta(String message) {
 		super(message);
 	}
 	

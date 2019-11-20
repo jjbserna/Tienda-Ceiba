@@ -4,7 +4,7 @@
 package com.ceiba.adn.tienda.dominio.servicio.prenda;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
-import com.ceiba.adn.tienda.dominio.excepcion.VentaException;
+import com.ceiba.adn.tienda.dominio.excepcion.ExceptionVenta;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
 
@@ -30,7 +30,7 @@ public class ServicioCrear {
 		if (comandoPrenda == null) {
 			return repositorioPrenda.agregar(prenda);
 		} else {
-			throw new VentaException(PRENDA_EXISTE);
+			throw new ExceptionVenta(PRENDA_EXISTE);
 		}
 
 	}
