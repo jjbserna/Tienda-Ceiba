@@ -6,10 +6,8 @@ package com.ceiba.adn.tienda.dominio.unitarias;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.infraestructura.repositoriojpa.PrendaRepositorio;
 import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
 
 /**

@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 /**
  * @author jeison.barbosa
@@ -21,6 +20,6 @@ public interface RepositorioPrenda {
 	
 	ComandoPrenda buscarPorCodigo(int codigoPrenda);
 	
-	boolean eliminar(int codigoPrenda);
+	void eliminar(int codigoPrenda);
 
 }

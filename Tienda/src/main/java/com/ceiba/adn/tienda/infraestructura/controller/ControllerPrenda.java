@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
-import com.ceiba.adn.tienda.aplicacion.manejador.ManejadorPrenda;
-
+import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorCrear;
+import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorEliminar;
+import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorListar;
 
 /**
  * @author jeison.barbosa
@@ -33,30 +34,38 @@ import com.ceiba.adn.tienda.aplicacion.manejador.ManejadorPrenda;
 @RequestMapping("/tienda")
 public class ControllerPrenda {
 
+	private final ManejadorCrear manejadorCrear;
+	private final ManejadorListar manejadorListar;
+	private final ManejadorEliminar manejadorEliminar;
 
-private final ManejadorPrenda manejadorPrenda;
-
-	
 	/**
- * @param manejadorCategoria
- */
-public ControllerPrenda(ManejadorPrenda manejadorCategoria) {
-	this.manejadorPrenda = manejadorCategoria;
-}
+	 * @param manejadorCrear
+	 * @param manejadorListar
+	 * @param manejadorEliminar
+	 */
+	public ControllerPrenda(ManejadorCrear manejadorCrear, ManejadorListar manejadorListar,
+			ManejadorEliminar manejadorEliminar) {
+		this.manejadorCrear = manejadorCrear;
+		this.manejadorListar = manejadorListar;
+		this.manejadorEliminar = manejadorEliminar;
+	}
 
+	/**
+	 * @param manejadorCategoria
+	 */
 	@PostMapping("/prenda")
 	public ComandoPrenda create(@RequestBody ComandoPrenda comandoPrenda) {
-		return manejadorPrenda.crear(comandoPrenda);
+		return manejadorCrear.crear(comandoPrenda);
 	}
-	
+
 	@GetMapping
-	public List<ComandoPrenda> listaGeneral(){
-		return manejadorPrenda.listar();
+	public List<ComandoPrenda> listaGeneral() {
+		return manejadorListar.listar();
 	}
-	
+
 	@DeleteMapping("/prenda/{codigoPrenda}")
 	public boolean eliminarPrenda(@PathVariable int codigoPrenda) {
-		return manejadorPrenda.eliminar(codigoPrenda);
+		return manejadorEliminar.eliminar(codigoPrenda);
 	}
-	
+
 }

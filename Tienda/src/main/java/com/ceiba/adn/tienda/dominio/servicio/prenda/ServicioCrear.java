@@ -1,34 +1,27 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.dominio.servicio;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+package com.ceiba.adn.tienda.dominio.servicio.prenda;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.dominio.excepcion.VentaException;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
-import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 /**
  * @author jeison.barbosa
  *
  */
-@Component
-public class ServicioImpPrenda {
+public class ServicioCrear {
 	private static final String PRENDA_EXISTE = "La prenda ya existe";
 
-	@Autowired
+
 	private RepositorioPrenda repositorioPrenda;
 
 	/**
 	 * @param repositorioPrenda
 	 */
-	public ServicioImpPrenda(RepositorioPrenda repositorioPrenda) {
+	public ServicioCrear(RepositorioPrenda repositorioPrenda) {
 		this.repositorioPrenda = repositorioPrenda;
 	}
 
@@ -42,16 +35,8 @@ public class ServicioImpPrenda {
 
 	}
 
-	public List<ComandoPrenda> listar() {
-		return repositorioPrenda.listar();
-	}
-
 	public ComandoPrenda buscarPorCodigo(int codigoPrenda) {
 		return repositorioPrenda.buscarPorCodigo(codigoPrenda);
-	}
-
-	public boolean eliminar(int codigoPrenda) {
-		return repositorioPrenda.eliminar(codigoPrenda);
 	}
 
 }

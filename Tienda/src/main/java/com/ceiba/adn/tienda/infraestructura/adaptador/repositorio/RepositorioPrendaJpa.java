@@ -1,4 +1,4 @@
-/**
+ /**
  * 
  */
 package com.ceiba.adn.tienda.infraestructura.adaptador.repositorio;
@@ -40,16 +40,15 @@ public class RepositorioPrendaJpa implements RepositorioPrenda {
 	public ComandoPrenda agregar(Prenda prenda) {
 		PrendaEntidad prendaEntidad = modelMapper.map(prenda, PrendaEntidad.class);
 		prendaDao.save(prendaEntidad);
-		ComandoPrenda comandoPrenda = modelMapper.map(prendaEntidad, ComandoPrenda.class);
-		return comandoPrenda;
+		return modelMapper.map(prendaEntidad, ComandoPrenda.class);
 	}
 
 	@Override
 	public List<ComandoPrenda> listar() {
-		List<PrendaEntidad> ListaPrendaEntidad = prendaDao.findAll();
-		List<ComandoPrenda> listaComando = new ArrayList<ComandoPrenda>();
-		for (int i = 0; i < ListaPrendaEntidad.size(); i++) {
-			listaComando.add(modelMapper.map(ListaPrendaEntidad.get(i), ComandoPrenda.class));
+		List<PrendaEntidad> listaPrendaEntidad = prendaDao.findAll();
+		List<ComandoPrenda> listaComando = new ArrayList<>();
+		for (int i = 0; i < listaPrendaEntidad.size(); i++) {
+			listaComando.add(modelMapper.map(listaPrendaEntidad.get(i), ComandoPrenda.class));
 		}
 		return listaComando;
 	}
@@ -65,13 +64,8 @@ public class RepositorioPrendaJpa implements RepositorioPrenda {
 
 	@Override
 	@Transactional
-	public boolean eliminar(int codigoPrenda) {
-		ComandoPrenda comandoPrenda = buscarPorCodigo(codigoPrenda);
-		if (comandoPrenda != null) {
-			prendaDao.deleteByCodigoPrenda(codigoPrenda);
-			return true;
-		}
-		return false;
+	public void eliminar(int codigoPrenda) {
+		prendaDao.deleteByCodigoPrenda(codigoPrenda);
 	}
 
 }
