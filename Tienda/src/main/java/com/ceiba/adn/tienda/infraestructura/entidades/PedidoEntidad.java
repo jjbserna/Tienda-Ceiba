@@ -23,7 +23,7 @@ import javax.persistence.TemporalType;
  *
  */
 @Entity(name="pedido")
-public class Pedido implements Serializable{
+public class PedidoEntidad implements Serializable{
 
 	/**
 	 * 
@@ -48,7 +48,7 @@ public class Pedido implements Serializable{
 	
     @ManyToOne
     @JoinColumn(name="cliente_id")
-	private Cliente clienteId;
+	private ClienteEntidad clienteId;
 
 	/**
 	 * @return the idPedido
@@ -109,14 +109,14 @@ public class Pedido implements Serializable{
 	/**
 	 * @return the clienteId
 	 */
-	public Cliente getClienteId() {
+	public ClienteEntidad getClienteId() {
 		return clienteId;
 	}
 
 	/**
 	 * @param clienteId the clienteId to set
 	 */
-	public void setClienteId(Cliente clienteId) {
+	public void setClienteId(ClienteEntidad clienteId) {
 		this.clienteId = clienteId;
 	}
     

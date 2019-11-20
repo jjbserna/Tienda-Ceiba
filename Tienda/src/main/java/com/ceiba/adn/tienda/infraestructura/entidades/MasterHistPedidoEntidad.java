@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  *
  */
 @Entity(name="master_hist_pedido")
-public class MasterHistPedido implements Serializable {
+public class MasterHistPedidoEntidad implements Serializable {
 
 	/**
 	 * 
@@ -37,7 +37,7 @@ public class MasterHistPedido implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
-	private Prenda clienteId;
+	private ClienteEntidad clienteId;
 	
 	@Column(name="fecha_compra")
 	@Temporal(TemporalType.DATE)
@@ -74,14 +74,14 @@ public class MasterHistPedido implements Serializable {
 	/**
 	 * @return the clienteId
 	 */
-	public Prenda getClienteId() {
+	public ClienteEntidad getClienteId() {
 		return clienteId;
 	}
 
 	/**
 	 * @param clienteId the clienteId to set
 	 */
-	public void setClienteId(Prenda clienteId) {
+	public void setClienteId(ClienteEntidad clienteId) {
 		this.clienteId = clienteId;
 	}
 

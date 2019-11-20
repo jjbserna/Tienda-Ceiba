@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
  *
  */
 @Entity(name="cliente")
-public class Cliente implements Serializable {
+public class ClienteEntidad implements Serializable {
 
 	/**
 	 * 

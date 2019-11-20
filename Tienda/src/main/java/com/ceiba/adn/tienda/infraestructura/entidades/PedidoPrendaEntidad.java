@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
  *
  */
 @Entity(name="pedido_x_prenda")
-public class Pedido_x_Prenda implements Serializable{
+public class PedidoPrendaEntidad implements Serializable{
 
 	/**
 	 * 
@@ -31,11 +31,11 @@ public class Pedido_x_Prenda implements Serializable{
 	
     @ManyToOne
     @JoinColumn(name="pedido_id")
-	private Pedido pedidoId;
+	private PedidoEntidad pedidoId;
     
     @ManyToOne
     @JoinColumn(name="prenda_id")
-	private Prenda prendaId;
+	private PrendaEntidad prendaId;
     
 	@Column(name="cantidad")
 	private double cantidad;
@@ -60,28 +60,28 @@ public class Pedido_x_Prenda implements Serializable{
 	/**
 	 * @return the pedidoId
 	 */
-	public Pedido getPedidoId() {
+	public PedidoEntidad getPedidoId() {
 		return pedidoId;
 	}
 
 	/**
 	 * @param pedidoId the pedidoId to set
 	 */
-	public void setPedidoId(Pedido pedidoId) {
+	public void setPedidoId(PedidoEntidad pedidoId) {
 		this.pedidoId = pedidoId;
 	}
 
 	/**
 	 * @return the prendaId
 	 */
-	public Prenda getPrendaId() {
+	public PrendaEntidad getPrendaId() {
 		return prendaId;
 	}
 
 	/**
 	 * @param prendaId the prendaId to set
 	 */
-	public void setPrendaId(Prenda prendaId) {
+	public void setPrendaId(PrendaEntidad prendaId) {
 		this.prendaId = prendaId;
 	}
 

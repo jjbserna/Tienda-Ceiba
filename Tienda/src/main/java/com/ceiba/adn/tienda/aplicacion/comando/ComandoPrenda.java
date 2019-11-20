@@ -28,7 +28,6 @@ public class ComandoPrenda {
 	 */
 	public ComandoPrenda(int codigoPrenda, String descripcion, String estilo, boolean estado, double precio,
 			int stock) {
-		super();
 		this.codigoPrenda = codigoPrenda;
 		this.descripcion = descripcion;
 		this.estilo = estilo;
@@ -36,6 +35,16 @@ public class ComandoPrenda {
 		this.precio = precio;
 		this.stock = stock;
 	}
+	
+	
+	/**
+	 * 
+	 */
+	public ComandoPrenda() {
+		super();
+	}
+
+
 	/**
 	 * @return the codigoPrenda
 	 */

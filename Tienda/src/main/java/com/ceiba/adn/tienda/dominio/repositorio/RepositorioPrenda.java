@@ -6,7 +6,8 @@ package com.ceiba.adn.tienda.dominio.repositorio;
 import java.util.List;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
-import com.ceiba.adn.tienda.infraestructura.entidades.Prenda;
+import com.ceiba.adn.tienda.dominio.modelo.Prenda;
+import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 /**
  * @author jeison.barbosa
@@ -14,7 +15,7 @@ import com.ceiba.adn.tienda.infraestructura.entidades.Prenda;
  */
 public interface RepositorioPrenda {
 	
-	Prenda agregar(Prenda prenda);
+	ComandoPrenda agregar(Prenda prenda);
 	
 	List<ComandoPrenda> listar();
 	

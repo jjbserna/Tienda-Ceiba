@@ -16,7 +16,7 @@ import javax.persistence.Id;
  *
  */
 @Entity (name="detalle_hist_pedido")
-public class DetalleHistPedido implements Serializable {
+public class DetalleHistPedidoEntidad implements Serializable {
 
 	/**
 	 * 

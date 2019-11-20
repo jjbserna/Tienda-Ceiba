@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
  *
  */
 @Entity(name="medio_pago")
-public class MedioPago implements Serializable{
+public class MedioPagoEntidad implements Serializable{
 
 	/**
 	 * 
@@ -38,7 +38,7 @@ public class MedioPago implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
-	private Prenda clienteId;
+	private PrendaEntidad clienteId;
 
 	/**
 	 * @return the idMedioPago
@@ -85,14 +85,14 @@ public class MedioPago implements Serializable{
 	/**
 	 * @return the clienteId
 	 */
-	public Prenda getClienteId() {
+	public PrendaEntidad getClienteId() {
 		return clienteId;
 	}
 
 	/**
 	 * @param clienteId the clienteId to set
 	 */
-	public void setClienteId(Prenda clienteId) {
+	public void setClienteId(PrendaEntidad clienteId) {
 		this.clienteId = clienteId;
 	}
 	

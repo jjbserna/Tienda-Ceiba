@@ -16,7 +16,7 @@ import javax.persistence.Id;
  *
  */
 @Entity(name="prenda")
-public class Prenda implements Serializable  {
+public class PrendaEntidad implements Serializable  {
 
 	/**
 	 * 

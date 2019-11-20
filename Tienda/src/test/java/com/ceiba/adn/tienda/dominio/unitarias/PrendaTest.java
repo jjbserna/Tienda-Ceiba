@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.infraestructura.repositoriojpa.IPrendaRepositorio;
+import com.ceiba.adn.tienda.infraestructura.repositoriojpa.PrendaRepositorio;
 import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
 
 /**
