@@ -15,23 +15,23 @@ import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
 import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
-import com.ceiba.adn.tienda.infraestructura.repositoriojpa.PrendaRepositorio;
+import com.ceiba.adn.tienda.infraestructura.repositoriojpa.PrendaRepositorioJpa;
 
 /**
  * @author jeison.barbosa
  *
  */
 @Repository
-public class RepositorioPrendaJpa implements RepositorioPrenda {
+public class RepositorioPrendaDao implements RepositorioPrenda {
 
 	@Autowired
-	private PrendaRepositorio prendaDao;
+	private PrendaRepositorioJpa prendaDao;
 	private ModelMapper modelMapper = new ModelMapper();
 
 	/**
 	 * @param prendaDao
 	 */
-	public RepositorioPrendaJpa(PrendaRepositorio prendaDao) {
+	public RepositorioPrendaDao(PrendaRepositorioJpa prendaDao) {
 		this.prendaDao = prendaDao;
 	}
 

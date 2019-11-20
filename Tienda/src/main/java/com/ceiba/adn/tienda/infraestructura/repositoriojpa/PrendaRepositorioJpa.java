@@ -12,7 +12,7 @@ import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
  * @author jeison.barbosa
  *
  */
-public interface PrendaRepositorio extends JpaRepository<PrendaEntidad, Integer>{
+public interface PrendaRepositorioJpa extends JpaRepository<PrendaEntidad, Integer>{
 
 	PrendaEntidad findByCodigoPrenda(int codigoPrenda);
 	
