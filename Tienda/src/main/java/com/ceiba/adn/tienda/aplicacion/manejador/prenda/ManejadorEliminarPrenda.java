@@ -5,23 +5,23 @@ package com.ceiba.adn.tienda.aplicacion.manejador.prenda;
 
 import org.springframework.stereotype.Component;
 
-import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminar;
+import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminarPrenda;
 
 /**
  * @author jeison.barbosa
  *
  */
 @Component
-public class ManejadorEliminar {
+public class ManejadorEliminarPrenda {
 
-	private final ServicioEliminar servicioEliminar;
+	private final ServicioEliminarPrenda servicioEliminar;
 
 
 
 	/**
 	 * @param servicioEliminar
 	 */
-	public ManejadorEliminar(ServicioEliminar servicioEliminar) {
+	public ManejadorEliminarPrenda(ServicioEliminarPrenda servicioEliminar) {
 		this.servicioEliminar = servicioEliminar;
 	}
 

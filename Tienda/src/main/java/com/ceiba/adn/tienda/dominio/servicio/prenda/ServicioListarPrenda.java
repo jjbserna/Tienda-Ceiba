@@ -12,7 +12,7 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
  * @author jeison.barbosa
  *
  */
-public class ServicioListar {
+public class ServicioListarPrenda {
 
 
 	private RepositorioPrenda repositorioPrenda;
@@ -20,7 +20,7 @@ public class ServicioListar {
 	/**
 	 * @param repositorioPrenda
 	 */
-	public ServicioListar(RepositorioPrenda repositorioPrenda) {
+	public ServicioListarPrenda(RepositorioPrenda repositorioPrenda) {
 		this.repositorioPrenda = repositorioPrenda;
 	}
 

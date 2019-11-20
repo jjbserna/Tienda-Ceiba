@@ -31,7 +31,7 @@ public class ClienteEntidad implements Serializable {
 	private int idCliente;
 	
 	@Column(name="identificacion" , nullable = false)
-	private String identificacion;
+	private int identificacion;
 	
 	@Column(name="nombre", nullable = false)
 	private String nombre;
@@ -59,7 +59,7 @@ public class ClienteEntidad implements Serializable {
 	private String usuario;
 	
 	@Column(name="password")
-	private String pasword;
+	private String password;
 
 	/**
 	 * @return the idCliente
@@ -78,14 +78,14 @@ public class ClienteEntidad implements Serializable {
 	/**
 	 * @return the identificacion
 	 */
-	public String getIdentificacion() {
+	public int getIdentificacion() {
 		return identificacion;
 	}
 
 	/**
 	 * @param identificacion the identificacion to set
 	 */
-	public void setIdentificacion(String identificacion) {
+	public void setIdentificacion(int identificacion) {
 		this.identificacion = identificacion;
 	}
 
@@ -202,17 +202,17 @@ public class ClienteEntidad implements Serializable {
 	}
 
 	/**
-	 * @return the pasword
+	 * @return the password
 	 */
-	public String getPasword() {
-		return pasword;
+	public String getpassword() {
+		return password;
 	}
 
 	/**
-	 * @param pasword the pasword to set
+	 * @param password the password to set
 	 */
-	public void setPasword(String pasword) {
-		this.pasword = pasword;
+	public void setpassword(String password) {
+		this.password = password;
 	}
 	
 	

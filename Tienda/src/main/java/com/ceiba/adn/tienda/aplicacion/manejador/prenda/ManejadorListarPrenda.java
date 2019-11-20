@@ -8,24 +8,24 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
-import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListar;
+import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListarPrenda;
 
 /**
  * @author jeison.barbosa
  *
  */
 @Component
-public class ManejadorListar {
+public class ManejadorListarPrenda {
 
 	
-	private final ServicioListar servicioListar;
+	private final ServicioListarPrenda servicioListar;
 	
 	
 	
 	/**
 	 * @param servicioListar
 	 */
-	public ManejadorListar(ServicioListar servicioListar) {
+	public ManejadorListarPrenda(ServicioListarPrenda servicioListar) {
 		this.servicioListar = servicioListar;
 	}
 

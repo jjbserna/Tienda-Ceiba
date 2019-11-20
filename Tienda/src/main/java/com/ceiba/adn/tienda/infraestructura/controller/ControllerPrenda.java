@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
-import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorCrear;
-import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorEliminar;
-import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorListar;
+import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorCrearPrenda;
+import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorEliminarPrenda;
+import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorListarPrenda;
 
 /**
  * @author jeison.barbosa
@@ -34,17 +34,17 @@ import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorListar;
 @RequestMapping("/tienda")
 public class ControllerPrenda {
 
-	private final ManejadorCrear manejadorCrear;
-	private final ManejadorListar manejadorListar;
-	private final ManejadorEliminar manejadorEliminar;
+	private final ManejadorCrearPrenda manejadorCrear;
+	private final ManejadorListarPrenda manejadorListar;
+	private final ManejadorEliminarPrenda manejadorEliminar;
 
 	/**
 	 * @param manejadorCrear
 	 * @param manejadorListar
 	 * @param manejadorEliminar
 	 */
-	public ControllerPrenda(ManejadorCrear manejadorCrear, ManejadorListar manejadorListar,
-			ManejadorEliminar manejadorEliminar) {
+	public ControllerPrenda(ManejadorCrearPrenda manejadorCrear, ManejadorListarPrenda manejadorListar,
+			ManejadorEliminarPrenda manejadorEliminar) {
 		this.manejadorCrear = manejadorCrear;
 		this.manejadorListar = manejadorListar;
 		this.manejadorEliminar = manejadorEliminar;

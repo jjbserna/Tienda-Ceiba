@@ -14,4 +14,6 @@ import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
  */
 public interface ClienteRepositorioJpa extends JpaRepository<ClienteEntidad, Integer>{
 
+	ClienteEntidad findByIdentificacion(int cedula);
+	void deleteByIdentificacion(int cedula);
 }

@@ -18,7 +18,7 @@ public class Cliente {
 	private static final String LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO = "La direccion es un dato obligatorio.";
 	private static final String EL_USUARIO_ES_UN_DATO_OBLIGATORIO = "El usuario es un dato obligatorio.";
 	private static final String EL_PASSWORD_ES_UN_DATO_OBLIGATORIO = "La contraseña es un dato obligatorio.";
-	private String identificacion;
+	private int identificacion;
 	private String nombre;
 	private String apellido;
 	private Date fechaNacimiento;
@@ -27,7 +27,7 @@ public class Cliente {
 	private String ciudad;
 	private String direccionEntrega;
 	private String usuario;
-	private String pasword;
+	private String password;
 	/**
 	 * @param identificacion
 	 * @param nombre
@@ -38,10 +38,10 @@ public class Cliente {
 	 * @param ciudad
 	 * @param direccionEntrega
 	 * @param usuario
-	 * @param pasword
+	 * @param password
 	 */
-	public Cliente(String identificacion, String nombre, String apellido, Date fechaNacimiento, String correo,
-			String celular, String ciudad, String direccionEntrega, String usuario, String pasword) {
+	public Cliente(int identificacion, String nombre, String apellido, Date fechaNacimiento, String correo,
+			String celular, String ciudad, String direccionEntrega, String usuario, String password) {
 		ValidarArgumento.validarObligatorio(identificacion, LA_IDENTIFICACION_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(nombre, EL_NOMBRE_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(apellido, EL_APELLIDO_ES_UN_DATO_OBLIGATORIO);
@@ -49,7 +49,7 @@ public class Cliente {
 		ValidarArgumento.validarObligatorio(ciudad, LA_CIUDAD_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(direccionEntrega, LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(usuario, EL_USUARIO_ES_UN_DATO_OBLIGATORIO);
-		ValidarArgumento.validarObligatorio(pasword, EL_PASSWORD_ES_UN_DATO_OBLIGATORIO);
+		ValidarArgumento.validarObligatorio(password, EL_PASSWORD_ES_UN_DATO_OBLIGATORIO);
 		this.identificacion = identificacion;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -59,18 +59,18 @@ public class Cliente {
 		this.ciudad = ciudad;
 		this.direccionEntrega = direccionEntrega;
 		this.usuario = usuario;
-		this.pasword = pasword;
+		this.password = password;
 	}
 	/**
 	 * @return the identificacion
 	 */
-	public String getIdentificacion() {
+	public int getIdentificacion() {
 		return identificacion;
 	}
 	/**
 	 * @param identificacion the identificacion to set
 	 */
-	public void setIdentificacion(String identificacion) {
+	public void setIdentificacion(int identificacion) {
 		this.identificacion = identificacion;
 	}
 	/**
@@ -170,16 +170,16 @@ public class Cliente {
 		this.usuario = usuario;
 	}
 	/**
-	 * @return the pasword
+	 * @return the password
 	 */
-	public String getPasword() {
-		return pasword;
+	public String getpassword() {
+		return password;
 	}
 	/**
-	 * @param pasword the pasword to set
+	 * @param password the password to set
 	 */
-	public void setPasword(String pasword) {
-		this.pasword = pasword;
+	public void setpassword(String password) {
+		this.password = password;
 	}
 
 	

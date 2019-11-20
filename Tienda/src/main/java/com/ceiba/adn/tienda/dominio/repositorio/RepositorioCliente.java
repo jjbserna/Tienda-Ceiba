@@ -6,6 +6,7 @@ package com.ceiba.adn.tienda.dominio.repositorio;
 import java.util.List;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 
 /**
  * @author jeison.barbosa
@@ -13,11 +14,11 @@ import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
  */
 public interface RepositorioCliente {
 	
-ComandoCliente agregar();
+	ComandoCliente agregar(Cliente cliente);
 
-List<ComandoCliente> listar();
+	List<ComandoCliente> listar();
 
-void eliminar(int cedula);
-
-ComandoCliente buscarPorCedula(int cedula);
+	void eliminar(int cedula);
+	
+	ComandoCliente buscarPorCedula(int cedula);
 }

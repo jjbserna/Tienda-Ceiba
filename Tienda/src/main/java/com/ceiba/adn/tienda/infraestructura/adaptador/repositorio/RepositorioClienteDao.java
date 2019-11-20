@@ -3,14 +3,18 @@
  */
 package com.ceiba.adn.tienda.infraestructura.adaptador.repositorio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
+import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
 import com.ceiba.adn.tienda.infraestructura.repositoriojpa.ClienteRepositorioJpa;
 
 /**
@@ -18,34 +22,46 @@ import com.ceiba.adn.tienda.infraestructura.repositoriojpa.ClienteRepositorioJpa
  *
  */
 @Repository
-public class RepositorioClienteDao implements RepositorioCliente{
-	
+public class RepositorioClienteDao implements RepositorioCliente {
+
 	@Autowired
 	private ClienteRepositorioJpa clienteDao;
 	private ModelMapper modelMapper = new ModelMapper();
 
 	@Override
-	public ComandoCliente agregar() {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public ComandoCliente agregar(Cliente cliente) {
+		ClienteEntidad clienteEntidad = modelMapper.map(cliente, ClienteEntidad.class);
+		clienteDao.save(clienteEntidad);
+		return modelMapper.map(clienteEntidad, ComandoCliente.class);
 	}
 
 	@Override
 	public List<ComandoCliente> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		List<ComandoCliente> listComandoCliente = new ArrayList<>();
+		List<ClienteEntidad> listClienteEntidad = clienteDao.findAll();
+		for (int i = 0; i < listClienteEntidad.size(); i++) {
+			listComandoCliente.add(modelMapper.map(listClienteEntidad.get(i), ComandoCliente.class));
+		}
+		return listComandoCliente;
+
 	}
 
 	@Override
+	@Transactional
 	public void eliminar(int cedula) {
-		// TODO Auto-generated method stub
-		
+		clienteDao.deleteByIdentificacion(cedula);
 	}
 
 	@Override
 	public ComandoCliente buscarPorCedula(int cedula) {
-		// TODO Auto-generated method stub
-		return null;
+		ClienteEntidad cliente = clienteDao.findByIdentificacion(cedula);
+		if (cliente != null) {
+			return modelMapper.map(cliente, ComandoCliente.class);
+		} else {
+			return null;
+		}
+
 	}
 
 }

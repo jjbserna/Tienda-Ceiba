@@ -4,7 +4,7 @@
 package com.ceiba.adn.tienda.dominio.servicio.prenda;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
-import com.ceiba.adn.tienda.dominio.excepcion.ExceptionVenta;
+import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
 
@@ -12,7 +12,7 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
  * @author jeison.barbosa
  *
  */
-public class ServicioCrear {
+public class ServicioCrearPrenda {
 	private static final String PRENDA_EXISTE = "La prenda ya existe";
 
 
@@ -21,7 +21,7 @@ public class ServicioCrear {
 	/**
 	 * @param repositorioPrenda
 	 */
-	public ServicioCrear(RepositorioPrenda repositorioPrenda) {
+	public ServicioCrearPrenda(RepositorioPrenda repositorioPrenda) {
 		this.repositorioPrenda = repositorioPrenda;
 	}
 
@@ -30,7 +30,7 @@ public class ServicioCrear {
 		if (comandoPrenda == null) {
 			return repositorioPrenda.agregar(prenda);
 		} else {
-			throw new ExceptionVenta(PRENDA_EXISTE);
+			throw new ExcepcionVenta(PRENDA_EXISTE);
 		}
 
 	}

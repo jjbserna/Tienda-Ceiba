@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
-import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrear;
-import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminar;
-import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListar;
+import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrearPrenda;
+import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminarPrenda;
+import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListarPrenda;
 
 /**
  * @author jeison.barbosa
@@ -19,17 +19,17 @@ import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListar;
 public class BeanServicioPrenda {
 	
 	@Bean
-	public ServicioCrear servicioCrear(RepositorioPrenda repositorioPrenda) {
-		return new ServicioCrear(repositorioPrenda);
+	public ServicioCrearPrenda servicioCrear(RepositorioPrenda repositorioPrenda) {
+		return new ServicioCrearPrenda(repositorioPrenda);
 	}
 	
 	@Bean
-	public ServicioListar servicioListar(RepositorioPrenda repositorioPrenda) {
-		return new ServicioListar(repositorioPrenda);
+	public ServicioListarPrenda servicioListar(RepositorioPrenda repositorioPrenda) {
+		return new ServicioListarPrenda(repositorioPrenda);
 	}
 	
 	@Bean
-	public ServicioEliminar servicioEliminar(RepositorioPrenda repositorioPrenda) {
-		return new ServicioEliminar(repositorioPrenda);
+	public ServicioEliminarPrenda servicioEliminar(RepositorioPrenda repositorioPrenda) {
+		return new ServicioEliminarPrenda(repositorioPrenda);
 	}
 }

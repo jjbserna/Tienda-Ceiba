@@ -10,14 +10,14 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
  * @author jeison.barbosa
  *
  */
-public class ServicioEliminar {
+public class ServicioEliminarPrenda {
 
 	private RepositorioPrenda repositorioPrenda;
 
 	/**
 	 * @param repositorioPrenda
 	 */
-	public ServicioEliminar(RepositorioPrenda repositorioPrenda) {
+	public ServicioEliminarPrenda(RepositorioPrenda repositorioPrenda) {
 		this.repositorioPrenda = repositorioPrenda;
 	}
 

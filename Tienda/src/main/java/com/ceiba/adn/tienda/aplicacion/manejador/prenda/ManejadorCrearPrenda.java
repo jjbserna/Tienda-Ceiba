@@ -8,23 +8,23 @@ import org.springframework.stereotype.Component;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.aplicacion.fabrica.FabricaPrenda;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrear;
+import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrearPrenda;
 
 /**
  * @author jeison.barbosa
  *
  */
 @Component
-public class ManejadorCrear {
+public class ManejadorCrearPrenda {
 
-	private final ServicioCrear servicioCrear;
+	private final ServicioCrearPrenda servicioCrear;
 	private final FabricaPrenda fabricaPrenda;
 
 	/**
 	 * @param servicioCrear
 	 * @param fabricaPrenda
 	 */
-	public ManejadorCrear(ServicioCrear servicioCrear, FabricaPrenda fabricaPrenda) {
+	public ManejadorCrearPrenda(ServicioCrearPrenda servicioCrear, FabricaPrenda fabricaPrenda) {
 		this.servicioCrear = servicioCrear;
 		this.fabricaPrenda = fabricaPrenda;
 	}
