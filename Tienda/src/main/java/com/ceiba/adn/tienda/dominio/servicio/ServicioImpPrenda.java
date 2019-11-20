@@ -21,7 +21,6 @@ import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 @Component
 public class ServicioImpPrenda {
 	private static final String PRENDA_EXISTE = "La prenda ya existe";
-	private static final String NO_EXISTE_PRENDA = "La prenda no se pudo encontrar, no existe";
 
 	@Autowired
 	private RepositorioPrenda repositorioPrenda;
