@@ -18,6 +18,7 @@ public class Cliente {
 	private static final String LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO = "La direccion es un dato obligatorio.";
 	private static final String EL_USUARIO_ES_UN_DATO_OBLIGATORIO = "El usuario es un dato obligatorio.";
 	private static final String EL_PASSWORD_ES_UN_DATO_OBLIGATORIO = "La contraseña es un dato obligatorio.";
+	private int idCliente;
 	private int identificacion;
 	private String nombre;
 	private String apellido;
@@ -40,7 +41,7 @@ public class Cliente {
 	 * @param usuario
 	 * @param password
 	 */
-	public Cliente(int identificacion, String nombre, String apellido, Date fechaNacimiento, String correo,
+	public Cliente(int idCliente, int identificacion, String nombre, String apellido, Date fechaNacimiento, String correo,
 			String celular, String ciudad, String direccionEntrega, String usuario, String password) {
 		ValidarArgumento.validarObligatorio(identificacion, LA_IDENTIFICACION_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(nombre, EL_NOMBRE_ES_UN_DATO_OBLIGATORIO);
@@ -50,6 +51,7 @@ public class Cliente {
 		ValidarArgumento.validarObligatorio(direccionEntrega, LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(usuario, EL_USUARIO_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(password, EL_PASSWORD_ES_UN_DATO_OBLIGATORIO);
+		this.idCliente=idCliente;
 		this.identificacion = identificacion;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -61,6 +63,21 @@ public class Cliente {
 		this.usuario = usuario;
 		this.password = password;
 	}
+	
+	/**
+	 * @return the idCliente
+	 */
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	/**
+	 * @param idCliente the idCliente to set
+	 */
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
 	/**
 	 * @return the identificacion
 	 */

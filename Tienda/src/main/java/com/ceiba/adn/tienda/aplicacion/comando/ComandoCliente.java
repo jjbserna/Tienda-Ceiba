@@ -10,6 +10,7 @@ import java.util.Date;
  *
  */
 public class ComandoCliente {
+	private int idCliente;
 	private int identificacion;
 	private String nombre;
 	private String apellido;
@@ -20,7 +21,10 @@ public class ComandoCliente {
 	private String direccionEntrega;
 	private String usuario;
 	private String password;
+	
+	
 	/**
+	 * @param idCliente
 	 * @param identificacion
 	 * @param nombre
 	 * @param apellido
@@ -32,8 +36,10 @@ public class ComandoCliente {
 	 * @param usuario
 	 * @param password
 	 */
-	public ComandoCliente(int identificacion, String nombre, String apellido, Date fechaNacimiento, String correo,
-			String celular, String ciudad, String direccionEntrega, String usuario, String password) {
+	public ComandoCliente(int idCliente, int identificacion, String nombre, String apellido, Date fechaNacimiento,
+			String correo, String celular, String ciudad, String direccionEntrega, String usuario, String password) {
+		super();
+		this.idCliente = idCliente;
 		this.identificacion = identificacion;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -45,11 +51,27 @@ public class ComandoCliente {
 		this.usuario = usuario;
 		this.password = password;
 	}
+	
+	
 	/**
 	 * 
 	 */
 	public ComandoCliente() {
 		super();
+	}
+
+
+	/**
+	 * @return the idCliente
+	 */
+	public int getIdCliente() {
+		return idCliente;
+	}
+	/**
+	 * @param idCliente the idCliente to set
+	 */
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
 	}
 	/**
 	 * @return the identificacion
@@ -171,8 +193,6 @@ public class ComandoCliente {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-   
-	
-	
+
 	
 }

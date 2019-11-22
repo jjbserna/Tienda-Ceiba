@@ -16,7 +16,7 @@ import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 public class FabricaCliente {
 
 	public Cliente crearCliente(ComandoCliente comandoCliente) {
-		return new Cliente(comandoCliente.getIdentificacion(), comandoCliente.getNombre(), comandoCliente.getApellido(),
+		return new Cliente(comandoCliente.getIdCliente(),comandoCliente.getIdentificacion(), comandoCliente.getNombre(), comandoCliente.getApellido(),
 				comandoCliente.getFechaNacimiento(), comandoCliente.getCorreo(), comandoCliente.getCelular(),
 				comandoCliente.getCiudad(), comandoCliente.getDireccionEntrega(), comandoCliente.getUsuario(),
 				comandoCliente.getPassword());

@@ -9,7 +9,7 @@ package com.ceiba.adn.tienda.aplicacion.comando;
  */
 
 public class ComandoPrenda {
-
+	private int idPrenda;
 	private int codigoPrenda;
 	private String descripcion;
 	private String estilo;
@@ -17,7 +17,10 @@ public class ComandoPrenda {
 	private double precio;
 	private int stock;
 
+	
+
 	/**
+	 * @param idPrenda
 	 * @param codigoPrenda
 	 * @param descripcion
 	 * @param estilo
@@ -25,8 +28,10 @@ public class ComandoPrenda {
 	 * @param precio
 	 * @param stock
 	 */
-	public ComandoPrenda(int codigoPrenda, String descripcion, String estilo, boolean estado, double precio,
-			int stock) {
+	public ComandoPrenda(int idPrenda, int codigoPrenda, String descripcion, String estilo, boolean estado,
+			double precio, int stock) {
+		super();
+		this.idPrenda = idPrenda;
 		this.codigoPrenda = codigoPrenda;
 		this.descripcion = descripcion;
 		this.estilo = estilo;
@@ -35,12 +40,26 @@ public class ComandoPrenda {
 		this.stock = stock;
 	}
 
-	/**
-	 * 
-	 */
+
 	public ComandoPrenda() {
-		super();
 	}
+
+
+	/**
+	 * @return the idPrenda
+	 */
+	public int getIdPrenda() {
+		return idPrenda;
+	}
+
+
+	/**
+	 * @param idPrenda the idPrenda to set
+	 */
+	public void setIdPrenda(int idPrenda) {
+		this.idPrenda = idPrenda;
+	}
+
 
 	/**
 	 * @return the codigoPrenda
@@ -49,12 +68,14 @@ public class ComandoPrenda {
 		return codigoPrenda;
 	}
 
+
 	/**
 	 * @param codigoPrenda the codigoPrenda to set
 	 */
 	public void setCodigoPrenda(int codigoPrenda) {
 		this.codigoPrenda = codigoPrenda;
 	}
+
 
 	/**
 	 * @return the descripcion
@@ -63,12 +84,14 @@ public class ComandoPrenda {
 		return descripcion;
 	}
 
+
 	/**
 	 * @param descripcion the descripcion to set
 	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 
 	/**
 	 * @return the estilo
@@ -77,12 +100,14 @@ public class ComandoPrenda {
 		return estilo;
 	}
 
+
 	/**
 	 * @param estilo the estilo to set
 	 */
 	public void setEstilo(String estilo) {
 		this.estilo = estilo;
 	}
+
 
 	/**
 	 * @return the estado
@@ -91,12 +116,14 @@ public class ComandoPrenda {
 		return estado;
 	}
 
+
 	/**
 	 * @param estado the estado to set
 	 */
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+
 
 	/**
 	 * @return the precio
@@ -105,6 +132,7 @@ public class ComandoPrenda {
 		return precio;
 	}
 
+
 	/**
 	 * @param precio the precio to set
 	 */
@@ -112,12 +140,14 @@ public class ComandoPrenda {
 		this.precio = precio;
 	}
 
+
 	/**
 	 * @return the stock
 	 */
 	public int getStock() {
 		return stock;
 	}
+
 
 	/**
 	 * @param stock the stock to set

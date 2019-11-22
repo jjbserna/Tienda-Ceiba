@@ -21,4 +21,6 @@ public interface RepositorioCliente {
 	void eliminar(int cedula);
 	
 	ComandoCliente buscarPorCedula(int cedula);
+	
+	ComandoCliente actualizar(Cliente cliente);
 }

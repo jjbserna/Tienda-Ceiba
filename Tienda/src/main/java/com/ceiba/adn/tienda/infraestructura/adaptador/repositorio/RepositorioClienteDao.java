@@ -64,4 +64,14 @@ public class RepositorioClienteDao implements RepositorioCliente {
 
 	}
 
+	@Override
+	@Transactional
+	public ComandoCliente actualizar(Cliente cliente) {
+		ClienteEntidad clienteEntidad = modelMapper.map(cliente, ClienteEntidad.class);
+		clienteDao.save(clienteEntidad);
+		return modelMapper.map(clienteEntidad, ComandoCliente.class);
+	}
+	
+	
+
 }

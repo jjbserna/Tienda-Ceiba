@@ -10,6 +10,7 @@ package com.ceiba.adn.tienda.dominio.modelo;
 public class Prenda {
 	private static final String LA_PRENDA_ES_UN_DATO_OBLIGATORIO = "La prenda es un dato obligatorio.";
 	private static final String EL_STOCK_ES_OBLIGATORIO = "El Stock es un dato obligatorio.";
+	private int idPrenda;
 	private int codigoPrenda;
 	private String descripcion;
 	private String estilo;
@@ -19,22 +20,37 @@ public class Prenda {
 
 	/**
 	 * @param idPrenda
+	 * @param codigoPrenda
 	 * @param descripcion
 	 * @param estilo
 	 * @param estado
 	 * @param precio
 	 * @param stock
 	 */
-	public Prenda(int codigoPrenda, String descripcion, String estilo, boolean estado, double precio, int stock) {
-		ValidarArgumento.validarObligatorio(codigoPrenda, LA_PRENDA_ES_UN_DATO_OBLIGATORIO);
-		ValidarArgumento.validarObligatorio(stock, EL_STOCK_ES_OBLIGATORIO);
+	public Prenda(int idPrenda, int codigoPrenda, String descripcion, String estilo, boolean estado, double precio,
+			int stock) {
+		super();
+		this.idPrenda = idPrenda;
 		this.codigoPrenda = codigoPrenda;
 		this.descripcion = descripcion;
 		this.estilo = estilo;
 		this.estado = estado;
 		this.precio = precio;
 		this.stock = stock;
+	}
 
+	/**
+	 * @return the idPrenda
+	 */
+	public int getIdPrenda() {
+		return idPrenda;
+	}
+
+	/**
+	 * @param idPrenda the idPrenda to set
+	 */
+	public void setIdPrenda(int idPrenda) {
+		this.idPrenda = idPrenda;
 	}
 
 	/**

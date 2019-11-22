@@ -16,7 +16,7 @@ import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 public class FabricaPrenda {
 
 	public Prenda crearPrenda(ComandoPrenda comandoPrenda) {
-		return new Prenda(comandoPrenda.getCodigoPrenda(), comandoPrenda.getDescripcion(), comandoPrenda.getEstilo(),
+		return new Prenda(comandoPrenda.getIdPrenda(), comandoPrenda.getCodigoPrenda(), comandoPrenda.getDescripcion(), comandoPrenda.getEstilo(),
 				comandoPrenda.isEstado(), comandoPrenda.getPrecio(), comandoPrenda.getStock());
 	}
 

@@ -3,6 +3,8 @@
  */
 package com.ceiba.adn.tienda.dominio.servicio.prenda;
 
+import org.modelmapper.ModelMapper;
+
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
@@ -13,10 +15,10 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
  *
  */
 public class ServicioCrearPrenda {
-	private static final String PRENDA_EXISTE = "La prenda ya existe";
 
-
+	private static final String LA_PRENDA_EXISTE="La prenda ya existe";
 	private RepositorioPrenda repositorioPrenda;
+	private ModelMapper modelMapper;
 
 	/**
 	 * @param repositorioPrenda
@@ -30,7 +32,8 @@ public class ServicioCrearPrenda {
 		if (comandoPrenda == null) {
 			return repositorioPrenda.agregar(prenda);
 		} else {
-			throw new ExcepcionVenta(PRENDA_EXISTE);
+			
+			throw new ExcepcionVenta(LA_PRENDA_EXISTE);
 		}
 
 	}

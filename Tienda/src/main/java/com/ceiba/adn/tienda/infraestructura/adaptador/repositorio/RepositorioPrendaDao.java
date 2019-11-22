@@ -68,4 +68,16 @@ public class RepositorioPrendaDao implements RepositorioPrenda {
 		prendaDao.deleteByCodigoPrenda(codigoPrenda);
 	}
 
+	@Override
+	@Transactional
+	public ComandoPrenda actualizar(Prenda prenda) {
+		PrendaEntidad prendaEntidad = modelMapper.map(prenda, PrendaEntidad.class);
+		prendaDao.save(prendaEntidad);
+		return modelMapper.map(prendaEntidad, ComandoPrenda.class);
+		
+		
+	}
+	
+	
+
 }

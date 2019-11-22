@@ -11,6 +11,7 @@ import com.ceiba.adn.tienda.dominio.modelo.Prenda;
  *
  */
 public class PrendaTestDataBuilder {
+	private static final int ID_PRENDA=123;
 	private static final int CODIGO_PRENDA = 1234;
 	private static final String DESCRIPCION = "Camisa DevOps";
 	private static final String ESTILO = "DevOps";
@@ -18,6 +19,7 @@ public class PrendaTestDataBuilder {
 	private static final double PRECIO = 100000;
 	private static final int STOCK = 100;
 	
+	private int idPrenda;
 	private int codigoPrenda;
 	private String descripcion;
 	private String estilo;
@@ -34,12 +36,18 @@ public class PrendaTestDataBuilder {
 	 * @param stock
 	 */
 	public PrendaTestDataBuilder() {
+		this.idPrenda=ID_PRENDA;
 		this.codigoPrenda=CODIGO_PRENDA;
 		this.descripcion = DESCRIPCION;
 		this.estilo = ESTILO;
 		this.estado = ESTADO;
 		this.precio = PRECIO;
 		this.stock = STOCK;
+	}
+	
+	public PrendaTestDataBuilder conIdPrenda(int idPrenda) {
+		this.idPrenda=idPrenda;
+		return this;
 	}
 	
 	public PrendaTestDataBuilder conCodigoPrenda(int codigoPrenda) {
@@ -74,7 +82,7 @@ public class PrendaTestDataBuilder {
 	}
 	
 	public Prenda build() {
-		return new Prenda(this.codigoPrenda, this.descripcion, this.estilo, this.estado, this.precio, this.stock);
+		return new Prenda(this.idPrenda, this.codigoPrenda, this.descripcion, this.estilo, this.estado, this.precio, this.stock);
 	}
 
 }

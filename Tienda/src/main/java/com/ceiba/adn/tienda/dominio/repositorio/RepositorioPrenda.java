@@ -21,5 +21,7 @@ public interface RepositorioPrenda {
 	ComandoPrenda buscarPorCodigo(int codigoPrenda);
 	
 	void eliminar(int codigoPrenda);
+	
+	ComandoPrenda actualizar(Prenda prenda);
 
 }
