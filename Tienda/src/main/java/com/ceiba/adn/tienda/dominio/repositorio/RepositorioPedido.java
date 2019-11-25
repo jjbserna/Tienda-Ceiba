@@ -16,9 +16,9 @@ public interface RepositorioPedido {
 
 	ComandoPedido crear(Pedido pedido);
 	List<ComandoPedido> listar();
-	void eliminar(int numeroOrden);
+	void eliminar(int numeroPedido);
 	ComandoPedido actualizar(Pedido pedido);
-	ComandoPedido buscar(Pedido pedido);
+	ComandoPedido buscar(int numeroPedido);
 	
 	
 }

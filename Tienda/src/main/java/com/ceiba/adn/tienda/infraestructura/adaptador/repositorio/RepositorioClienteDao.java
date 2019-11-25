@@ -5,6 +5,7 @@ package com.ceiba.adn.tienda.infraestructura.adaptador.repositorio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,15 @@ public class RepositorioClienteDao implements RepositorioCliente {
 		clienteDao.save(clienteEntidad);
 		return modelMapper.map(clienteEntidad, ComandoCliente.class);
 	}
-	
-	
+
+	@Override
+	public ComandoCliente buscarPorId(int idCliente) {
+	ClienteEntidad clienteEntidad=clienteDao.findById(idCliente);
+	if(clienteEntidad!=null) {
+		return modelMapper.map(clienteEntidad, ComandoCliente.class);
+	}
+	return null;
+		
+	}
 
 }

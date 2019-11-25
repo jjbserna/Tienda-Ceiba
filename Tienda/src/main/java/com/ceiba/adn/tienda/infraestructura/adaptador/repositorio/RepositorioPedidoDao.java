@@ -27,11 +27,12 @@ public class RepositorioPedidoDao implements RepositorioPedido {
 
 	@Autowired
 	private PedidoRepositorioJpa pedidoRepositorioJpa;
-	private ModelMapper modelMapper;
+	private ModelMapper modelMapper=new ModelMapper();
 
 	@Override
 	@Transactional
 	public ComandoPedido crear(Pedido pedido) {
+		
 		PedidoEntidad pedidoEntidad = modelMapper.map(pedido, PedidoEntidad.class);
 		pedidoRepositorioJpa.save(pedidoEntidad);
 		return modelMapper.map(pedidoEntidad, ComandoPedido.class);
@@ -50,8 +51,8 @@ public class RepositorioPedidoDao implements RepositorioPedido {
 
 	@Override
 	@Transactional
-	public void eliminar(int numeroOrden) {
-		pedidoRepositorioJpa.deleteByNumeroOrden(numeroOrden);
+	public void eliminar(int numeroPedido) {
+		pedidoRepositorioJpa.deleteByNumeroOrden(numeroPedido);
 	}
 
 	@Override
@@ -63,9 +64,12 @@ public class RepositorioPedidoDao implements RepositorioPedido {
 	}
 
 	@Override
-	public ComandoPedido buscar(Pedido pedido) {
-		PedidoEntidad pedidoEntidad=pedidoRepositorioJpa.findByNumeroOrden(pedido.getNumeroOrden());
-		return modelMapper.map(pedidoEntidad, ComandoPedido.class);
+	public ComandoPedido buscar(int numeroPedido) {
+		PedidoEntidad pedidoEntidad=pedidoRepositorioJpa.findByNumeroOrden(numeroPedido);
+		if(pedidoEntidad!=null) {
+			return modelMapper.map(pedidoEntidad, ComandoPedido.class);
+		}
+		return null;
 	}
 	
 	

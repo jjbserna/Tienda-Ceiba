@@ -5,6 +5,7 @@ package com.ceiba.adn.tienda.infraestructura.repositoriojpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
 
 
@@ -16,4 +17,5 @@ public interface ClienteRepositorioJpa extends JpaRepository<ClienteEntidad, Int
 
 	ClienteEntidad findByIdentificacion(int cedula);
 	void deleteByIdentificacion(int cedula);
+	ClienteEntidad findById(int idCliente);
 }

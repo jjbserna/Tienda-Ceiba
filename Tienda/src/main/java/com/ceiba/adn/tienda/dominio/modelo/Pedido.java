@@ -94,6 +94,11 @@ public class Pedido {
 	public void setClienteId(ClienteEntidad clienteId) {
 		this.clienteId = clienteId;
 	}
+	@Override
+	public String toString() {
+		return "Pedido [idPedido=" + idPedido + ", numeroOrden=" + numeroOrden + ", fechaPedido=" + fechaPedido
+				+ ", fechaEntrega=" + fechaEntrega + ", clienteId=" + clienteId + "]";
+	}
 	
 	
 	
