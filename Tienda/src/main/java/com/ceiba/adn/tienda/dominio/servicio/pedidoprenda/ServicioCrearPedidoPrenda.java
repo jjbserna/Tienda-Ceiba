@@ -47,6 +47,7 @@ public class ServicioCrearPedidoPrenda {
 				PrendaEntidad prendaEntidad = new PrendaEntidad();
 				pedidoEntidad.setIdPedido(comandoPedido.getIdPedido());
 				prendaEntidad.setIdPrenda(comandoPrenda.getIdPrenda());
+				pedidoEntidad.setNumeroOrden(comandoPedido.getNumeroOrden());
 				pedidoPrenda.setPedidoId(pedidoEntidad);
 				pedidoPrenda.setPrendaId(prendaEntidad);
 				return repositorioPedidoPrenda.crear(pedidoPrenda);

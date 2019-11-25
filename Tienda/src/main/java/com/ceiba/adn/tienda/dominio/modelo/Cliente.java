@@ -18,6 +18,10 @@ public class Cliente {
 	private static final String LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO = "La direccion es un dato obligatorio.";
 	private static final String EL_USUARIO_ES_UN_DATO_OBLIGATORIO = "El usuario es un dato obligatorio.";
 	private static final String EL_PASSWORD_ES_UN_DATO_OBLIGATORIO = "La contraseña es un dato obligatorio.";
+	private static final String LA_IDENTIFICACION_DEBE_SER_NUMERICA = "La identificación debe ser un valor númerico.";
+	private static final String LA_LONGITUD_IDENTIFICACION_NO_ES_CORRECTA = "La longitud de la identificacion no es permitida.";
+	private static final String LA_LONGITUD_CONTRASENA_NO_ES_CORRECTA = "La longitud de la contraseña no es permitida.";
+	private static final int LONGITUD = 5;
 	private int idCliente;
 	private int identificacion;
 	private String nombre;
@@ -51,6 +55,9 @@ public class Cliente {
 		ValidarArgumento.validarObligatorio(direccionEntrega, LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(usuario, EL_USUARIO_ES_UN_DATO_OBLIGATORIO);
 		ValidarArgumento.validarObligatorio(password, EL_PASSWORD_ES_UN_DATO_OBLIGATORIO);
+		ValidarArgumento.validarNumerico(identificacion, LA_IDENTIFICACION_DEBE_SER_NUMERICA);
+		ValidarArgumento.validarLongitud(identificacion, LONGITUD, LA_LONGITUD_IDENTIFICACION_NO_ES_CORRECTA);
+		ValidarArgumento.validarLongitud(password, LONGITUD, LA_LONGITUD_CONTRASENA_NO_ES_CORRECTA);
 		this.idCliente=idCliente;
 		this.identificacion = identificacion;
 		this.nombre = nombre;

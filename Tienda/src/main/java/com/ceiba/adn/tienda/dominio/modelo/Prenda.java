@@ -10,6 +10,7 @@ package com.ceiba.adn.tienda.dominio.modelo;
 public class Prenda {
 	private static final String LA_PRENDA_ES_UN_DATO_OBLIGATORIO = "La prenda es un dato obligatorio.";
 	private static final String EL_STOCK_ES_OBLIGATORIO = "El Stock es un dato obligatorio.";
+	private static final String EL_CODIGO_DE_PRENDA_ES_OBLIGATORIO = "El codigo de la prenda es obligatorio.";
 	private int idPrenda;
 	private int codigoPrenda;
 	private String descripcion;
@@ -29,7 +30,9 @@ public class Prenda {
 	 */
 	public Prenda(int idPrenda, int codigoPrenda, String descripcion, String estilo, boolean estado, double precio,
 			int stock) {
-		super();
+		ValidarArgumento.validarObligatorio(codigoPrenda, EL_CODIGO_DE_PRENDA_ES_OBLIGATORIO);
+		ValidarArgumento.validarObligatorio(descripcion, LA_PRENDA_ES_UN_DATO_OBLIGATORIO);
+		ValidarArgumento.validarObligatorio(stock, EL_STOCK_ES_OBLIGATORIO);
 		this.idPrenda = idPrenda;
 		this.codigoPrenda = codigoPrenda;
 		this.descripcion = descripcion;
