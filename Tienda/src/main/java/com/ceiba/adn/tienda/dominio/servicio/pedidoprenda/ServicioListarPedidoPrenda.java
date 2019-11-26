@@ -26,9 +26,8 @@ public class ServicioListarPedidoPrenda {
 
 	public List<ComandoPedidoPrenda> listarPorPedido(int numeroOrden) {
 		List<ComandoPedidoPrenda> listaComandoPrenda = repositorioPedidoPrenda.listar();
-		List<ComandoPedidoPrenda> listaFiltro = new ArrayList<ComandoPedidoPrenda>();
+		List<ComandoPedidoPrenda> listaFiltro = new ArrayList<>();
 		for (int i = 0; i < listaComandoPrenda.size(); i++) {
-			System.out.println("listado"+listaComandoPrenda.get(i).getPedidoId().getNumeroOrden());
 			if (listaComandoPrenda.get(i).getPedidoId().getNumeroOrden() == numeroOrden) {
 				listaFiltro.add(listaComandoPrenda.get(i));
 			}

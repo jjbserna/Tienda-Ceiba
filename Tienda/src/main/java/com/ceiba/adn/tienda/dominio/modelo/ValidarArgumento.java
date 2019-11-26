@@ -13,7 +13,7 @@ import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionValorObligatorio;
  */
 public class ValidarArgumento {
 
-	private ValidarArgumento() {
+	public ValidarArgumento() {
 	}
 	
 	public static void validarObligatorio(Object valor, String mensaje) {
