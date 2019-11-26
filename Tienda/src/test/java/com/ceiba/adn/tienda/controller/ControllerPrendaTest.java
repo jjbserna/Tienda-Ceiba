@@ -20,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.ceiba.adn.tienda.TiendaApplication;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
+import com.ceiba.adn.tienda.testdatabuilder.ComandoPrendaTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -49,8 +51,11 @@ public class ControllerPrendaTest {
 
 	@Test
 	public void crear() throws Exception {
-
-		mockMvc.perform(MockMvcRequestBuilders.get("/prenda").accept(MediaType.APPLICATION_JSON))
+		
+		ComandoPrenda comandoPrenda= new ComandoPrendaTestDataBuilder().build(); 
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/prenda")
+				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 	}
 
