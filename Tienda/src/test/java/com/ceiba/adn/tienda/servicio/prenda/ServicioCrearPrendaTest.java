@@ -98,20 +98,5 @@ public class ServicioCrearPrendaTest {
 		assertFalse(eliminado);
 	}
 
-	@Test
-	public void validaractualizacionTest() {
-		// arrange
-		Prenda prenda = new PrendaTestDataBuilder().build();
-		RepositorioPrenda repositorioPrenda = Mockito.mock(RepositorioPrenda.class);
-		ComandoPrenda comandoPrenda = new ComandoPrenda(prenda.getIdPrenda(), prenda.getCodigoPrenda(),
-				prenda.getDescripcion(), prenda.getEstilo(), prenda.isEstado(), prenda.getPrecio(), prenda.getStock());
-		when(repositorioPrenda.buscarPorCodigo(prenda.getCodigoPrenda())).thenReturn(comandoPrenda);
-		when(repositorioPrenda.agregar(prenda)).thenReturn(comandoPrenda);
-		ServicioActualizarPrenda servicioActualizarPrenda = new ServicioActualizarPrenda(repositorioPrenda);
-		prenda.setDescripcion(PRENDA_NUEVA);
-		// act
-		comandoPrenda=servicioActualizarPrenda.actualizar(prenda);
-		// assert
-		assertEquals(PRENDA_NUEVA, comandoPrenda.getDescripcion());
-	}
+
 }
