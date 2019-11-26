@@ -16,7 +16,7 @@ public class ServicioActualizarPrenda {
 
 	private RepositorioPrenda repositorioPrenda;
 
-	private static final String LA_PRENDA_NO_EXISTE="La prenda no existe";
+	public static final String LA_PRENDA_NO_EXISTE="La prenda no existe";
 	/**
 	 * @param repositorioPrenda
 	 */

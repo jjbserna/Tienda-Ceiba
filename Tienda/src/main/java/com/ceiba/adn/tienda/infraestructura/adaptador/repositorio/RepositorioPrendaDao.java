@@ -74,8 +74,6 @@ public class RepositorioPrendaDao implements RepositorioPrenda {
 		PrendaEntidad prendaEntidad = modelMapper.map(prenda, PrendaEntidad.class);
 		prendaDao.save(prendaEntidad);
 		return modelMapper.map(prendaEntidad, ComandoPrenda.class);
-		
-		
 	}
 	
 	
