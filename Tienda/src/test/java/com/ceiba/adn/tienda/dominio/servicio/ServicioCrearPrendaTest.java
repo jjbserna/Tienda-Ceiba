@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.servicio.prenda;
+package com.ceiba.adn.tienda.dominio.servicio;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -17,6 +17,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrendaTestDataBuilder;
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
@@ -24,8 +25,7 @@ import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioActualizarPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrearPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminarPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListarPrenda;
-import com.ceiba.adn.tienda.testdatabuilder.ComandoPrendaTestDataBuilder;
-import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
+import com.ceiba.adn.tienda.dominio.testdatabuilder.PrendaTestDataBuilder;
 
 /**
  * @author jeison.barbosa

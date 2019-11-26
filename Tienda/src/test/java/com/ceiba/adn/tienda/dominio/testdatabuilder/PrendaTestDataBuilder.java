@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.testdatabuilder;
+package com.ceiba.adn.tienda.dominio.testdatabuilder;
 
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 

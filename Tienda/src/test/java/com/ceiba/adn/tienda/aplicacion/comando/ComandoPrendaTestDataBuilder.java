@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.testdatabuilder;
+package com.ceiba.adn.tienda.aplicacion.comando;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 

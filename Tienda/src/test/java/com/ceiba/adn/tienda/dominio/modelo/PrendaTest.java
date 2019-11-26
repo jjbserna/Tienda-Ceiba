@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ceiba.adn.tienda.modelo;
+package com.ceiba.adn.tienda.dominio.modelo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
+import com.ceiba.adn.tienda.dominio.testdatabuilder.PrendaTestDataBuilder;
 
 /**
  * @author jeison.barbosa
