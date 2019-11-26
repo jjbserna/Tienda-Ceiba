@@ -76,12 +76,31 @@ public class ControllerPrendaTest {
 	}
 
 	@Test
-	public void listar() throws Exception {
+	public void listarTest() throws Exception {
 		crearTest();
 		mockMvc.perform(get("/prenda")
 		.contentType(MediaType.APPLICATION_JSON))
 		.andExpect(status().isOk())
 		.andExpect(jsonPath("$", hasSize(1)));
+	}
+	
+	@Test
+	public void eliminarTest() throws Exception {
+		crearTest();
+		ComandoPrenda comandoPrenda = new ComandoPrendaTestDataBuilder().build();
+		mockMvc.perform(delete("/prenda/eliminar/1234433")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsBytes(comandoPrenda)))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void errorEliminarTest() throws Exception {
+		ComandoPrenda comandoPrenda = new ComandoPrendaTestDataBuilder().build();
+		mockMvc.perform(delete("/prenda/eliminar/1234433")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsBytes(comandoPrenda)))
+				.andExpect(status().isOk());
 	}
 
 }
