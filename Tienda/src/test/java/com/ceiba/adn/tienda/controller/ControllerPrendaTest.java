@@ -42,10 +42,10 @@ public class ControllerPrendaTest {
 	@Autowired
 	private WebApplicationContext wac;
 
-    @Before
-    public void setup() throws Exception {
-    this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-    }
+//    @Before
+//    public void setup() throws Exception {
+//    this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+//    }
 
 	@Test
 	public void crear() throws Exception {

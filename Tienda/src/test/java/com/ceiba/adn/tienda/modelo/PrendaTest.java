@@ -60,12 +60,13 @@ public class PrendaTest {
 			assertEquals(Prenda.EL_CODIGO_DE_PRENDA_ES_OBLIGATORIO, e.getMessage());
 		}
 	}
+
 	@Test
 	public void testDescripcionObligatorio() {
 		// Arrange
 		PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder();
 		prendaTestDataBuilder.conDescripcion(null);
-		
+
 		try {
 			// Act
 			prendaTestDataBuilder.build();
@@ -76,21 +77,22 @@ public class PrendaTest {
 			assertEquals(Prenda.LA_PRENDA_ES_UN_DATO_OBLIGATORIO, e.getMessage());
 		}
 	}
+
 	@Test
 	public void testStockObligatorio() {
 		// Arrange
-				PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder();
-				prendaTestDataBuilder.conStock(0);
-				
-				try {
-					// Act
-					prendaTestDataBuilder.build();
-					fail();
+		PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder();
+		prendaTestDataBuilder.conStock(0);
 
-				} catch (ExcepcionValorObligatorio e) {
-					// assert
-					assertEquals(Prenda.EL_STOCK_ES_OBLIGATORIO, e.getMessage());
-				}
+		try {
+			// Act
+			prendaTestDataBuilder.build();
+			fail();
+
+		} catch (ExcepcionValorObligatorio e) {
+			// assert
+			assertEquals(Prenda.EL_STOCK_ES_OBLIGATORIO, e.getMessage());
+		}
 	}
 
 }

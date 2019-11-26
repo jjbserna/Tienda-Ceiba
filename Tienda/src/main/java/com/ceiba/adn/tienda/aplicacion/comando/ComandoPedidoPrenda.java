@@ -40,7 +40,6 @@ public class ComandoPedidoPrenda {
 	 * 
 	 */
 	public ComandoPedidoPrenda() {
-		super();
 	}
 
 
@@ -73,6 +72,46 @@ public class ComandoPedidoPrenda {
 	 */
 	public double getValorTotal() {
 		return valorTotal;
+	}
+
+
+	/**
+	 * @param idPedidoPrenda the idPedidoPrenda to set
+	 */
+	public void setIdPedidoPrenda(int idPedidoPrenda) {
+		this.idPedidoPrenda = idPedidoPrenda;
+	}
+
+
+	/**
+	 * @param pedidoId the pedidoId to set
+	 */
+	public void setPedidoId(PedidoEntidad pedidoId) {
+		this.pedidoId = pedidoId;
+	}
+
+
+	/**
+	 * @param prendaId the prendaId to set
+	 */
+	public void setPrendaId(PrendaEntidad prendaId) {
+		this.prendaId = prendaId;
+	}
+
+
+	/**
+	 * @param cantidad the cantidad to set
+	 */
+	public void setCantidad(double cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
+	/**
+	 * @param valorTotal the valorTotal to set
+	 */
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
 	}
 	
 	

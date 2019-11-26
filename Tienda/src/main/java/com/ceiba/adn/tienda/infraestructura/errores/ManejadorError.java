@@ -19,7 +19,7 @@ public class ManejadorError extends ResponseEntityExceptionHandler {
     
     private static final Logger LOGGER_ERROR = LoggerFactory.getLogger(ManejadorError.class);
 
-    private static final String OCURRIO_UN_ERROR_FAVOR_CONTACTAR_AL_ADMINISTRADOR = "Ocurrió un error favor contactar al administrador.";
+    private static final String OCURRIO_UN_ERROR_FAVOR_CONTACTAR_AL_ADMINISTRADOR = "Ocurrio un error favor contactar al administrador.";
 
     private static final ConcurrentHashMap<String, Integer> CODIGOS_ESTADO = new ConcurrentHashMap<>();
 

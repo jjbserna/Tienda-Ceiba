@@ -30,7 +30,6 @@ public class ComandoPrenda {
 	 */
 	public ComandoPrenda(int idPrenda, int codigoPrenda, String descripcion, String estilo, boolean estado,
 			double precio, int stock) {
-		super();
 		this.idPrenda = idPrenda;
 		this.codigoPrenda = codigoPrenda;
 		this.descripcion = descripcion;

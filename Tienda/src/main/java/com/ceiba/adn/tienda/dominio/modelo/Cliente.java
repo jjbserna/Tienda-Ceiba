@@ -17,10 +17,10 @@ public class Cliente {
 	private static final String LA_CIUDAD_ES_UN_DATO_OBLIGATORIO = "La ciudad es un dato obligatorio.";
 	private static final String LA_DIRECCION_ENTREGA_ES_UN_DATO_OBLIGATORIO = "La direccion es un dato obligatorio.";
 	private static final String EL_USUARIO_ES_UN_DATO_OBLIGATORIO = "El usuario es un dato obligatorio.";
-	private static final String EL_PASSWORD_ES_UN_DATO_OBLIGATORIO = "La contraseña es un dato obligatorio.";
-	private static final String LA_IDENTIFICACION_DEBE_SER_NUMERICA = "La identificación debe ser un valor númerico.";
+	private static final String EL_PASSWORD_ES_UN_DATO_OBLIGATORIO = "La contrasena es un dato obligatorio.";
+	private static final String LA_IDENTIFICACION_DEBE_SER_NUMERICA = "La identificacion debe ser un valor numerico.";
 	private static final String LA_LONGITUD_IDENTIFICACION_NO_ES_CORRECTA = "La longitud de la identificacion no es permitida.";
-	private static final String LA_LONGITUD_CONTRASENA_NO_ES_CORRECTA = "La longitud de la contraseña no es permitida.";
+	private static final String LA_LONGITUD_CONTRASENA_NO_ES_CORRECTA = "La longitud de la contrasena no es permitida.";
 	private static final int LONGITUD = 5;
 	private int idCliente;
 	private int identificacion;
