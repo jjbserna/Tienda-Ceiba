@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
 import com.ceiba.adn.tienda.dominio.modelo.Cliente;
-import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
 
 /**
  * @author jeison.barbosa

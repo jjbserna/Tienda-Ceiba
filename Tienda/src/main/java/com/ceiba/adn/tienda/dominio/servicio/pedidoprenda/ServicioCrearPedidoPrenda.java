@@ -7,13 +7,11 @@ import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedido;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoPrenda;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
-import com.ceiba.adn.tienda.dominio.modelo.Pedido;
 import com.ceiba.adn.tienda.dominio.modelo.PedidoPrenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedido;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedidoPrenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
 import com.ceiba.adn.tienda.infraestructura.entidades.PedidoEntidad;
-import com.ceiba.adn.tienda.infraestructura.entidades.PedidoPrendaEntidad;
 import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 /**

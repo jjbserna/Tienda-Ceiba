@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoPrenda;
 import com.ceiba.adn.tienda.aplicacion.fabrica.FabricaPedidoPrenda;
 import com.ceiba.adn.tienda.dominio.modelo.PedidoPrenda;
-import com.ceiba.adn.tienda.dominio.servicio.pedido.ServicioCrearPedido;
 import com.ceiba.adn.tienda.dominio.servicio.pedidoprenda.ServicioCrearPedidoPrenda;
 
 /**

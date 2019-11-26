@@ -15,7 +15,7 @@ public class ValidarArgumento {
 
 	private ValidarArgumento() {
 	}
-
+	
 	public static void validarObligatorio(Object valor, String mensaje) {
 		if (valor == null || valor.equals(0)) {
 			throw new ExcepcionValorObligatorio(mensaje);
@@ -28,7 +28,7 @@ public class ValidarArgumento {
             throw new ExcepcionLongitud(mensaje);
         }
     }
-
+    
 	public static void validarNumerico(int valor, String mensaje) {
 		String numero = String.valueOf(valor);
 		for (int i = 0; i < numero.length(); i++) {

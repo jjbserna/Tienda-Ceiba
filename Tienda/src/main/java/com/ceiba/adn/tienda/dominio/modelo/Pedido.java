@@ -13,7 +13,7 @@ import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
  */
 public class Pedido {
 	
-	private static final String EL_NUMERO_DE_ORDEN_ES_OBLIGATORIO = "El numero de orden es obligatorio";
+	public static final String EL_NUMERO_DE_ORDEN_ES_OBLIGATORIO = "El numero de orden es obligatorio";
 	private int idPedido;
 	private int numeroOrden;
 	private Date fechaPedido;

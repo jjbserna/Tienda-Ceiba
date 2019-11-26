@@ -3,7 +3,6 @@
  */
 package com.ceiba.adn.tienda.modelo;
 
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
@@ -11,9 +10,7 @@ import org.junit.Test;
 
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.dominio.modelo.ValidarArgumento;
 import com.ceiba.adn.tienda.testdatabuilder.PrendaTestDataBuilder;
-
 
 /**
  * @author jeison.barbosa
@@ -46,26 +43,54 @@ public class PrendaTest {
 		assertEquals(PRECIO, prenda.getPrecio(), 0);
 		assertEquals(STOCK, prenda.getStock());
 	}
-	
+
 	@Test
 	public void testCodigoObligatorio() {
-		//Arrange
-		PrendaTestDataBuilder prendaTestDataBuilder=new PrendaTestDataBuilder();
+		// Arrange
+		PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder();
 		prendaTestDataBuilder.conCodigoPrenda(0);
-		Prenda prenda=prendaTestDataBuilder.build();
-		//Act 
+
 		try {
-			ValidarArgumento.validarObligatorio(null, "El codigo de la prenda es obligatorio.");
+			// Act
+			prendaTestDataBuilder.build();
 			fail();
 
 		} catch (ExcepcionValorObligatorio e) {
 			// assert
-			assertEquals("El codigo de la prenda es obligatorio.", e.getMessage());
+			assertEquals(Prenda.EL_CODIGO_DE_PRENDA_ES_OBLIGATORIO, e.getMessage());
 		}
 	}
-	
-	
-	
-	
+	@Test
+	public void testDescripcionObligatorio() {
+		// Arrange
+		PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder();
+		prendaTestDataBuilder.conDescripcion(null);
+		
+		try {
+			// Act
+			prendaTestDataBuilder.build();
+			fail();
+
+		} catch (ExcepcionValorObligatorio e) {
+			// assert
+			assertEquals(Prenda.LA_PRENDA_ES_UN_DATO_OBLIGATORIO, e.getMessage());
+		}
+	}
+	@Test
+	public void testStockObligatorio() {
+		// Arrange
+				PrendaTestDataBuilder prendaTestDataBuilder = new PrendaTestDataBuilder();
+				prendaTestDataBuilder.conStock(0);
+				
+				try {
+					// Act
+					prendaTestDataBuilder.build();
+					fail();
+
+				} catch (ExcepcionValorObligatorio e) {
+					// assert
+					assertEquals(Prenda.EL_STOCK_ES_OBLIGATORIO, e.getMessage());
+				}
+	}
 
 }
