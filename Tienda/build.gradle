@@ -10,8 +10,12 @@ plugins {
 group = 'com.ceiba.adn.tienda'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-
 targetCompatibility='1.8'
+compileJava.options.encoding = 'UTF-8' 
+tasks.withType(JavaCompile) {
+ options.encoding = 'UTF-8' 
+ } 
+
 
 repositories {
 	mavenCentral()
@@ -34,7 +38,8 @@ dependencies {
     testCompileOnly 'junit:junit:4.12'
     testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.0'
 	compile('org.modelmapper:modelmapper:1.1.0')
-	compileOnly 'org.projectlombok:lombok:1.16.18'
+	implementation 'org.projectlombok:lombok:1.18.4'
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'org.postgresql:postgresql'
