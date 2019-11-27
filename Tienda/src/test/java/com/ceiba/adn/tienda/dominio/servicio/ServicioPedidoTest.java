@@ -10,6 +10,14 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -30,6 +38,10 @@ import com.ceiba.adn.tienda.dominio.testdatabuilder.PedidoTestDataBuilder;
  *
  */
 public class ServicioPedidoTest {
+	private final static String FECHA_SOLICITUD="2019-11-27";
+	private final static String FECHA_ESPERADA="2019-12-02";
+	private final static String FECHA_PEDIDO_SABADO="2019-11-30";
+	private final static String FECHA_PEDIDO_DOMINGO="2019-12-01";
 
 	@Test
 	public void validarExistenciaTest() {
@@ -115,10 +127,7 @@ public class ServicioPedidoTest {
 	public void validarNoEliminacionTest() {
 		// arrange
 		Pedido pedido = new PedidoTestDataBuilder().build();
-		Cliente cliente = new ClienteTestDataBuilder().build();
 		RepositorioPedido repositorioPedido = Mockito.mock(RepositorioPedido.class);
-		ComandoPedido comandoPedido = new ComandoPedido(pedido.getIdPedido(), pedido.getNumeroOrden(),
-				pedido.getFechaPedido(), pedido.getFechaEntrega(), cliente);
 		when(repositorioPedido.buscar(pedido.getNumeroOrden())).thenReturn(null);
 
 		ServicioEliminarPedido servicioEliminarPedido = new ServicioEliminarPedido(repositorioPedido);
@@ -128,5 +137,51 @@ public class ServicioPedidoTest {
 		assertFalse(eliminado);
 
 	}
+	
+
+	@Test
+	public void validarFechaEntrega() {
+		// arrange
+		RepositorioPedido repositorioPedido = Mockito.mock(RepositorioPedido.class);
+		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
+		ServicioCrearPedido servicioCrearPedido = new ServicioCrearPedido(repositorioPedido, repositorioCliente);
+		Date fechaSolicitud;
+		Date fechaEsperada;
+		Date fechaEntrega;
+		try {
+			fechaSolicitud = new SimpleDateFormat("yyyy-MM-dd").parse(FECHA_SOLICITUD);
+			fechaEsperada = new SimpleDateFormat("yyyy-MM-dd").parse(FECHA_ESPERADA);
+			// act
+			fechaEntrega=servicioCrearPedido.generarFechaEntrega(ServicioCrearPedido.DIAS_ENTREGA, fechaSolicitud);
+			// assert
+			Assert.assertEquals(fechaEsperada, fechaEntrega);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			fail();
+		}
+	}
+	
+	@Test
+	public void validarFechasRestriccion() {
+		// arrange
+		RepositorioPedido repositorioPedido = Mockito.mock(RepositorioPedido.class);
+		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
+		ServicioCrearPedido servicioCrearPedido = new ServicioCrearPedido(repositorioPedido, repositorioCliente);
+		
+		try {
+			Date fechaPedidoSabado = new SimpleDateFormat("yyyy-MM-dd").parse(FECHA_PEDIDO_SABADO);
+			Date fechaPedidoDomingo = new SimpleDateFormat("yyyy-MM-dd").parse(FECHA_PEDIDO_DOMINGO);
+			// act
+			boolean pedido=servicioCrearPedido.validarFecha(fechaPedidoSabado);
+			boolean pedido2=servicioCrearPedido.validarFecha(fechaPedidoDomingo);
+			// assert
+			assertTrue(pedido);
+			assertTrue(pedido2);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			fail();
+		}
+	}
+	
 
 }

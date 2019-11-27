@@ -33,7 +33,7 @@ import com.ceiba.adn.tienda.dominio.testdatabuilder.PrendaTestDataBuilder;
  */
 public class ServicioPrendaTest {
 	private static final String LA_PRENDA_EXISTE = "La prenda ya existe";
-	private static final String PRENDA_NUEVA = "Camisa DevOps";
+	private static final String PRENDA_NUEVA = "Camisa Java";
 	private static final int TAMANO_LISTA = 1;
 
 	@Test
@@ -132,7 +132,7 @@ public class ServicioPrendaTest {
 		assertEquals(TAMANO_LISTA, servicioListarPrenda.listar().size());
 
 	}
-	
+
 	@Test
 	public void validarActualizacionTest() {
 		// arrange
@@ -141,11 +141,12 @@ public class ServicioPrendaTest {
 		ComandoPrenda comandoPrenda = new ComandoPrenda(prenda.getIdPrenda(), prenda.getCodigoPrenda(),
 				prenda.getDescripcion(), prenda.getEstilo(), prenda.isEstado(), prenda.getPrecio(), prenda.getStock());
 		when(repositorioPrenda.buscarPorCodigo(prenda.getCodigoPrenda())).thenReturn(comandoPrenda);
+		comandoPrenda.setDescripcion("Camisa Java");
 		when(repositorioPrenda.actualizar(Mockito.any())).thenReturn(comandoPrenda);
 		ServicioActualizarPrenda servicioActualizarPrenda = new ServicioActualizarPrenda(repositorioPrenda);
-		Prenda prendaNueva=new Prenda(2, 125255, "Camisa Java", "Manga Larga", true, 20000, 100);
+		Prenda prendaNueva = new Prenda(2, 125255, "Camisa Java", "Manga Larga", true, 20000, 100);
 		// act
-		comandoPrenda=servicioActualizarPrenda.actualizar(prendaNueva);
+		comandoPrenda = servicioActualizarPrenda.actualizar(prendaNueva);
 		// assert
 		assertEquals(PRENDA_NUEVA, comandoPrenda.getDescripcion());
 	}
