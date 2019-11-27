@@ -69,14 +69,12 @@ public class ServicioCrearPedido {
 		cal.setTime(fechaSolicitud);
 		int i = 1;
 		while (i < dias) {
-			// Si el día es diferente de domingo aumente un día
 			if (cal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
 				i++;
 				cal.get(Calendar.DAY_OF_WEEK);
 			}
 			cal.add(Calendar.DATE, 1);
 		}
-		// si al finalizar la cuenta cae un domingo aumente un día más
 		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
 			cal.add(Calendar.DATE, 1);
 		}
