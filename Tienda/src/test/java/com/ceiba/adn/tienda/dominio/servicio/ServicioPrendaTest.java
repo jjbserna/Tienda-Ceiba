@@ -26,7 +26,6 @@ import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrearPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminarPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListarPrenda;
 import com.ceiba.adn.tienda.dominio.testdatabuilder.PrendaTestDataBuilder;
-import com.sun.xml.bind.v2.schemagen.xmlschema.Any;
 
 /**
  * @author jeison.barbosa
@@ -80,7 +79,6 @@ public class ServicioPrendaTest {
 		RepositorioPrenda repositorioPrenda = Mockito.mock(RepositorioPrenda.class);
 		ComandoPrenda comandoPrenda = new ComandoPrenda(prenda.getIdPrenda(), prenda.getCodigoPrenda(),
 				prenda.getDescripcion(), prenda.getEstilo(), prenda.isEstado(), prenda.getPrecio(), prenda.getStock());
-		when(repositorioPrenda.agregar(prenda)).thenReturn(comandoPrenda);
 		when(repositorioPrenda.buscarPorCodigo(prenda.getCodigoPrenda())).thenReturn(comandoPrenda);
 
 		ServicioEliminarPrenda servicioEliminarPrenda = new ServicioEliminarPrenda(repositorioPrenda);

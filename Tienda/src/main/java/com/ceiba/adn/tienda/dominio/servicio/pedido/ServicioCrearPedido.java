@@ -19,10 +19,10 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedido;
  *
  */
 public class ServicioCrearPedido {
-	private static final String PEDIDO_EXISTE = "El pedido ya existe";
-	private static final String EL_CLIENTE_NO_EXISTE = "El cliente no existe";
-	private static final String FECHA_INVALIDA_PARA_PEDIDO = "No es posible hacer pedido ni sabado, ni domingo";
-	private static final int DIAS_ENTREGA = 5;
+	public static final String PEDIDO_EXISTE = "El pedido ya existe";
+	public static final String EL_CLIENTE_NO_EXISTE = "El cliente no existe";
+	public static final String FECHA_INVALIDA_PARA_PEDIDO = "No es posible hacer pedido ni sabado, ni domingo";
+	public static final int DIAS_ENTREGA = 5;
 	private RepositorioPedido repositorioPedido;
 	private RepositorioCliente repositorioCliente;
 
