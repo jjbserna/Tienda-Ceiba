@@ -9,6 +9,7 @@ import java.util.Date;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedido;
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.dominio.modelo.Pedido;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedido;
@@ -21,6 +22,7 @@ import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
 public class ServicioCrearPedido {
 	private static final String PEDIDO_EXISTE = "El pedido ya existe";
 	private static final String EL_CLIENTE_NO_EXISTE = "El cliente no existe";
+	private static final String FECHA_INVALIDA_PARA_PEDIDO = "No es posible hacer pedido ni sabado, ni domingo";
 	private static final int DIAS_ENTREGA = 5;
 	private RepositorioPedido repositorioPedido;
 	private RepositorioCliente repositorioCliente;
@@ -34,25 +36,28 @@ public class ServicioCrearPedido {
 	}
 
 	public ComandoPedido crear(Pedido pedido) {
+		pedido.setFechaPedido(new Date());
+		if (ValidarFecha(pedido.getFechaPedido())) {
+			throw new ExcepcionVenta(FECHA_INVALIDA_PARA_PEDIDO);
+		}
 		ComandoPedido comandoPedido = repositorioPedido.buscar(pedido.getNumeroOrden());
 		if (comandoPedido == null) {
 			ComandoCliente comandoCliente = repositorioCliente.buscarPorCedula(pedido.getClienteId().getIdCliente());
 			if (comandoCliente != null) {
-				ClienteEntidad clienteEntidad = new ClienteEntidad();
-				clienteEntidad.setIdCliente(comandoCliente.getIdCliente());
-				clienteEntidad.setIdentificacion(comandoCliente.getIdentificacion());
-				clienteEntidad.setNombre(comandoCliente.getNombre());
-				clienteEntidad.setApellido(comandoCliente.getApellido());
-				clienteEntidad.setFechaNacimiento(comandoCliente.getFechaNacimiento());
-				clienteEntidad.setCorreo(comandoCliente.getCorreo());
-				clienteEntidad.setCelular(comandoCliente.getCelular());
-				clienteEntidad.setCiudad(comandoCliente.getCiudad());
-				clienteEntidad.setDireccionEntrega(comandoCliente.getDireccionEntrega());
-				clienteEntidad.setUsuario(comandoCliente.getUsuario());
-				clienteEntidad.setDireccionEntrega(comandoCliente.getCorreo());
-				Date fechaEntregaNueva=generarFechaEntrega(DIAS_ENTREGA, pedido.getFechaPedido());
+				Cliente cliente = new Cliente();
+				cliente.setIdCliente(comandoCliente.getIdCliente());
+				cliente.setIdentificacion(comandoCliente.getIdentificacion());
+				cliente.setNombre(comandoCliente.getNombre());
+				cliente.setApellido(comandoCliente.getApellido());
+				cliente.setFechaNacimiento(comandoCliente.getFechaNacimiento());
+				cliente.setCorreo(comandoCliente.getCorreo());
+				cliente.setCelular(comandoCliente.getCelular());
+				cliente.setCiudad(comandoCliente.getCiudad());
+				cliente.setDireccionEntrega(comandoCliente.getDireccionEntrega());
+				cliente.setUsuario(comandoCliente.getUsuario());
+				Date fechaEntregaNueva = generarFechaEntrega(DIAS_ENTREGA, pedido.getFechaPedido());
 				pedido.setFechaEntrega(fechaEntregaNueva);
-				pedido.setClienteId(clienteEntidad);
+				pedido.setClienteId(cliente);
 				return repositorioPedido.crear(pedido);
 			}
 			throw new ExcepcionVenta(EL_CLIENTE_NO_EXISTE);
@@ -65,7 +70,7 @@ public class ServicioCrearPedido {
 		cal.setTime(fechaSolicitud);
 		int i = 1;
 		while (i < dias) {
-			//Si el día es diferente de domingo aumente un día
+			// Si el día es diferente de domingo aumente un día
 			if (cal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
 				i++;
 				cal.get(Calendar.DAY_OF_WEEK);
@@ -77,5 +82,14 @@ public class ServicioCrearPedido {
 			cal.add(Calendar.DATE, 1);
 		}
 		return cal.getTime();
+	}
+
+	public boolean ValidarFecha(Date fechaPedido) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(fechaPedido);
+		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+			return true;
+		}
+		return false;
 	}
 }

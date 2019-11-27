@@ -5,8 +5,6 @@ package com.ceiba.adn.tienda.dominio.modelo;
 
 import java.util.Date;
 
-import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
-
 /**
  * @author jeison.barbosa
  *
@@ -18,7 +16,7 @@ public class Pedido {
 	private int numeroOrden;
 	private Date fechaPedido;
 	private Date fechaEntrega;
-	private ClienteEntidad clienteId;
+	private Cliente clienteId;
 	/**
 	 * @param idPedido
 	 * @param numeroOrden
@@ -26,13 +24,15 @@ public class Pedido {
 	 * @param fechaEntrega
 	 * @param clienteId
 	 */
-	public Pedido(int idPedido, int numeroOrden, Date fechaPedido, Date fechaEntrega, ClienteEntidad clienteId) {
+	public Pedido(int idPedido, int numeroOrden, Date fechaPedido, Date fechaEntrega, Cliente clienteId) {
 		ValidarArgumento.validarObligatorio(numeroOrden, EL_NUMERO_DE_ORDEN_ES_OBLIGATORIO);
 		this.idPedido = idPedido;
 		this.numeroOrden = numeroOrden;
 		this.fechaPedido = fechaPedido;
 		this.fechaEntrega = fechaEntrega;
 		this.clienteId = clienteId;
+	}
+	public Pedido() {
 	}
 	/**
 	 * @return the idPedido
@@ -85,13 +85,13 @@ public class Pedido {
 	/**
 	 * @return the clienteId
 	 */
-	public ClienteEntidad getClienteId() {
+	public Cliente getClienteId() {
 		return clienteId;
 	}
 	/**
 	 * @param clienteId the clienteId to set
 	 */
-	public void setClienteId(ClienteEntidad clienteId) {
+	public void setClienteId(Cliente clienteId) {
 		this.clienteId = clienteId;
 	}
 	@Override

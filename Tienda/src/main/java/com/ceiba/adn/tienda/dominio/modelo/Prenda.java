@@ -42,6 +42,9 @@ public class Prenda {
 		this.stock = stock;
 	}
 
+	public Prenda() {
+	}
+
 	/**
 	 * @return the idPrenda
 	 */

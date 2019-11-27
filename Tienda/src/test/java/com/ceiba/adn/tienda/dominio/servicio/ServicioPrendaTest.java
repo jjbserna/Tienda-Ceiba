@@ -26,14 +26,15 @@ import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioCrearPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioEliminarPrenda;
 import com.ceiba.adn.tienda.dominio.servicio.prenda.ServicioListarPrenda;
 import com.ceiba.adn.tienda.dominio.testdatabuilder.PrendaTestDataBuilder;
+import com.sun.xml.bind.v2.schemagen.xmlschema.Any;
 
 /**
  * @author jeison.barbosa
  *
  */
-public class ServicioCrearPrendaTest {
+public class ServicioPrendaTest {
 	private static final String LA_PRENDA_EXISTE = "La prenda ya existe";
-	private static final String PRENDA_NUEVA = "Camisa Java";
+	private static final String PRENDA_NUEVA = "Camisa DevOps";
 	private static final int TAMANO_LISTA = 1;
 
 	@Test
@@ -132,6 +133,23 @@ public class ServicioCrearPrendaTest {
 		// act-assert
 		assertEquals(TAMANO_LISTA, servicioListarPrenda.listar().size());
 
+	}
+	
+	@Test
+	public void validarActualizacionTest() {
+		// arrange
+		Prenda prenda = new PrendaTestDataBuilder().build();
+		RepositorioPrenda repositorioPrenda = Mockito.mock(RepositorioPrenda.class);
+		ComandoPrenda comandoPrenda = new ComandoPrenda(prenda.getIdPrenda(), prenda.getCodigoPrenda(),
+				prenda.getDescripcion(), prenda.getEstilo(), prenda.isEstado(), prenda.getPrecio(), prenda.getStock());
+		when(repositorioPrenda.buscarPorCodigo(prenda.getCodigoPrenda())).thenReturn(comandoPrenda);
+		when(repositorioPrenda.actualizar(Mockito.any())).thenReturn(comandoPrenda);
+		ServicioActualizarPrenda servicioActualizarPrenda = new ServicioActualizarPrenda(repositorioPrenda);
+		Prenda prendaNueva=new Prenda(2, 125255, "Camisa Java", "Manga Larga", true, 20000, 100);
+		// act
+		comandoPrenda=servicioActualizarPrenda.actualizar(prendaNueva);
+		// assert
+		assertEquals(PRENDA_NUEVA, comandoPrenda.getDescripcion());
 	}
 
 }

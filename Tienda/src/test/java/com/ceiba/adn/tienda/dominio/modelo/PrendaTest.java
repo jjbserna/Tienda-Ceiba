@@ -17,7 +17,7 @@ import com.ceiba.adn.tienda.dominio.testdatabuilder.PrendaTestDataBuilder;
  *
  */
 public class PrendaTest {
-
+	
 	private static final int CODIGO_PRENDA = 1234;
 	private static final String DESCRIPCION = "Camisa DevOps";
 	private static final String ESTILO = "DevOps";

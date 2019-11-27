@@ -3,6 +3,8 @@
  */
 package com.ceiba.adn.tienda.aplicacion.comando;
 
+import com.ceiba.adn.tienda.dominio.modelo.Pedido;
+import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.infraestructura.entidades.PedidoEntidad;
 import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
@@ -13,8 +15,8 @@ import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 public class ComandoPedidoPrenda {
 	private int idPedidoPrenda;
-	private PedidoEntidad pedidoId;
-	private PrendaEntidad prendaId;
+	private Pedido pedidoId;
+	private Prenda prendaId;
 	private double cantidad;
 	private double valorTotal;
 	
@@ -26,7 +28,7 @@ public class ComandoPedidoPrenda {
 	 * @param cantidad
 	 * @param valorTotal
 	 */
-	public ComandoPedidoPrenda(int idPedidoPrenda, PedidoEntidad pedidoId, PrendaEntidad prendaId, double cantidad,
+	public ComandoPedidoPrenda(int idPedidoPrenda, Pedido pedidoId, Prenda prendaId, double cantidad,
 			double valorTotal) {
 		this.idPedidoPrenda = idPedidoPrenda;
 		this.pedidoId = pedidoId;
@@ -52,13 +54,13 @@ public class ComandoPedidoPrenda {
 	/**
 	 * @return the pedidoId
 	 */
-	public PedidoEntidad getPedidoId() {
+	public Pedido getPedidoId() {
 		return pedidoId;
 	}
 	/**
 	 * @return the prendaId
 	 */
-	public PrendaEntidad getPrendaId() {
+	public Prenda getPrendaId() {
 		return prendaId;
 	}
 	/**
@@ -86,7 +88,7 @@ public class ComandoPedidoPrenda {
 	/**
 	 * @param pedidoId the pedidoId to set
 	 */
-	public void setPedidoId(PedidoEntidad pedidoId) {
+	public void setPedidoId(Pedido pedidoId) {
 		this.pedidoId = pedidoId;
 	}
 
@@ -94,7 +96,7 @@ public class ComandoPedidoPrenda {
 	/**
 	 * @param prendaId the prendaId to set
 	 */
-	public void setPrendaId(PrendaEntidad prendaId) {
+	public void setPrendaId(Prenda prendaId) {
 		this.prendaId = prendaId;
 	}
 

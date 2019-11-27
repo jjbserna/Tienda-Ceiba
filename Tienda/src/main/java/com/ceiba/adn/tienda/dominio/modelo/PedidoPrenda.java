@@ -13,8 +13,8 @@ import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 public class PedidoPrenda {
 	
 	private int idPedidoPrenda;
-	private PedidoEntidad pedidoId;
-	private PrendaEntidad prendaId;
+	private Pedido pedidoId;
+	private Prenda prendaId;
 	private double cantidad;
 	private double valorTotal;
 	/**
@@ -24,7 +24,7 @@ public class PedidoPrenda {
 	 * @param cantidad
 	 * @param valorTotal
 	 */
-	public PedidoPrenda(int idPedidoPrenda, PedidoEntidad pedidoId, PrendaEntidad prendaId, double cantidad,
+	public PedidoPrenda(int idPedidoPrenda, Pedido pedidoId, Prenda prendaId, double cantidad,
 			double valorTotal) {
 		this.idPedidoPrenda = idPedidoPrenda;
 		this.pedidoId = pedidoId;
@@ -47,25 +47,25 @@ public class PedidoPrenda {
 	/**
 	 * @return the pedidoId
 	 */
-	public PedidoEntidad getPedidoId() {
+	public Pedido getPedidoId() {
 		return pedidoId;
 	}
 	/**
 	 * @param pedidoId the pedidoId to set
 	 */
-	public void setPedidoId(PedidoEntidad pedidoId) {
+	public void setPedidoId(Pedido pedidoId) {
 		this.pedidoId = pedidoId;
 	}
 	/**
 	 * @return the prendaId
 	 */
-	public PrendaEntidad getPrendaId() {
+	public Prenda getPrendaId() {
 		return prendaId;
 	}
 	/**
 	 * @param prendaId the prendaId to set
 	 */
-	public void setPrendaId(PrendaEntidad prendaId) {
+	public void setPrendaId(Prenda prendaId) {
 		this.prendaId = prendaId;
 	}
 	/**

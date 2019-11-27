@@ -45,6 +45,7 @@ public class Cliente {
 	 * @param usuario
 	 * @param password
 	 */
+	
 	public Cliente(int idCliente, int identificacion, String nombre, String apellido, Date fechaNacimiento, String correo,
 			String celular, String ciudad, String direccionEntrega, String usuario, String password) {
 		ValidarArgumento.validarObligatorio(identificacion, LA_IDENTIFICACION_ES_UN_DATO_OBLIGATORIO);
@@ -71,6 +72,12 @@ public class Cliente {
 		this.password = password;
 	}
 	
+	/**
+	 * 
+	 */
+	public Cliente() {
+	}
+
 	/**
 	 * @return the idCliente
 	 */

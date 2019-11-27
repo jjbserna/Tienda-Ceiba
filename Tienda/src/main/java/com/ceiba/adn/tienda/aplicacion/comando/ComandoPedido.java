@@ -5,7 +5,7 @@ package com.ceiba.adn.tienda.aplicacion.comando;
 
 import java.util.Date;
 
-import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 
 /**
  * @author jeison.barbosa
@@ -16,8 +16,24 @@ public class ComandoPedido {
 	private int numeroOrden;
 	private Date fechaPedido;
 	private Date fechaEntrega;
-	private ClienteEntidad clienteId;
+	private Cliente clienteId;
 	
+	
+	/**
+	 * @param idPedido
+	 * @param numeroOrden
+	 * @param fechaPedido
+	 * @param fechaEntrega
+	 * @param clienteId
+	 */
+	public ComandoPedido(int idPedido, int numeroOrden, Date fechaPedido, Date fechaEntrega, Cliente clienteId) {
+		this.idPedido = idPedido;
+		this.numeroOrden = numeroOrden;
+		this.fechaPedido = fechaPedido;
+		this.fechaEntrega = fechaEntrega;
+		this.clienteId = clienteId;
+	}
+
 	/**
 	 * 
 	 */
@@ -55,7 +71,7 @@ public class ComandoPedido {
 	/**
 	 * @return the clienteId
 	 */
-	public ClienteEntidad getClienteId() {
+	public Cliente getClienteId() {
 		return clienteId;
 	}
 
@@ -90,7 +106,7 @@ public class ComandoPedido {
 	/**
 	 * @param clienteId the clienteId to set
 	 */
-	public void setClienteId(ClienteEntidad clienteId) {
+	public void setClienteId(Cliente clienteId) {
 		this.clienteId = clienteId;
 	}
 

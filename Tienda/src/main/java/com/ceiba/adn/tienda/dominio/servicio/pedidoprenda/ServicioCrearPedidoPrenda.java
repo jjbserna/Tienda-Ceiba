@@ -7,7 +7,9 @@ import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedido;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoPrenda;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
+import com.ceiba.adn.tienda.dominio.modelo.Pedido;
 import com.ceiba.adn.tienda.dominio.modelo.PedidoPrenda;
+import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedido;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedidoPrenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
@@ -41,13 +43,13 @@ public class ServicioCrearPedidoPrenda {
 			ComandoPedido comandoPedido = repositorioPedido.buscar(pedidoPrenda.getPedidoId().getIdPedido());
 			ComandoPrenda comandoPrenda = repositorioPrenda.buscarPorCodigo(pedidoPrenda.getPrendaId().getIdPrenda());
 			if(comandoPedido != null && comandoPrenda != null) {
-				PedidoEntidad pedidoEntidad = new PedidoEntidad();
-				PrendaEntidad prendaEntidad = new PrendaEntidad();
-				pedidoEntidad.setIdPedido(comandoPedido.getIdPedido());
-				prendaEntidad.setIdPrenda(comandoPrenda.getIdPrenda());
-				pedidoEntidad.setNumeroOrden(comandoPedido.getNumeroOrden());
-				pedidoPrenda.setPedidoId(pedidoEntidad);
-				pedidoPrenda.setPrendaId(prendaEntidad);
+				Pedido pedido = new Pedido();
+				Prenda prenda = new Prenda();
+				pedido.setIdPedido(comandoPedido.getIdPedido());
+				prenda.setIdPrenda(comandoPrenda.getIdPrenda());
+				pedido.setNumeroOrden(comandoPedido.getNumeroOrden());
+				pedidoPrenda.setPedidoId(pedido);
+				pedidoPrenda.setPrendaId(prenda);
 				return repositorioPedidoPrenda.crear(pedidoPrenda);
 			}
 			throw new ExcepcionVenta(EL_PEDIDO_O_PRENDA_NO_EXISTE);

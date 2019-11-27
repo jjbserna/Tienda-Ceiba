@@ -102,5 +102,4 @@ public class ControllerPrendaTest {
 				.content(objectMapper.writeValueAsBytes(comandoPrenda)))
 				.andExpect(status().isOk());
 	}
-
 }
