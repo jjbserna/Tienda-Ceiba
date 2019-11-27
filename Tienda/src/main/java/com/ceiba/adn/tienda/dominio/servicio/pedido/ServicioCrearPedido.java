@@ -36,7 +36,7 @@ public class ServicioCrearPedido {
 
 	public ComandoPedido crear(Pedido pedido) {
 		pedido.setFechaPedido(new Date());
-		if (ValidarFecha(pedido.getFechaPedido())) {
+		if (validarFecha(pedido.getFechaPedido())) {
 			throw new ExcepcionVenta(FECHA_INVALIDA_PARA_PEDIDO);
 		}
 		ComandoPedido comandoPedido = repositorioPedido.buscar(pedido.getNumeroOrden());
@@ -81,12 +81,9 @@ public class ServicioCrearPedido {
 		return cal.getTime();
 	}
 
-	public boolean ValidarFecha(Date fechaPedido) {
+	public boolean validarFecha(Date fechaPedido) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(fechaPedido);
-		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-			return true;
-		}
-		return false;
+		return (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY); 
 	}
 }

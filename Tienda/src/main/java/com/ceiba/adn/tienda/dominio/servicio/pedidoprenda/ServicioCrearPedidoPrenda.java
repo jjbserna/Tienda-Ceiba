@@ -13,8 +13,6 @@ import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedido;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedidoPrenda;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
-import com.ceiba.adn.tienda.infraestructura.entidades.PedidoEntidad;
-import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 /**
  * @author jeison.barbosa
