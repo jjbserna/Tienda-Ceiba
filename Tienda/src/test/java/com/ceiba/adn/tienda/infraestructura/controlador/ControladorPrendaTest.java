@@ -40,7 +40,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest(classes = TiendaApplication.class)
 @AutoConfigureMockMvc
 @Transactional
-public class ControllerPrendaTest {
+public class ControladorPrendaTest {
 
 	@Autowired
 	private ObjectMapper objectMapper;
