@@ -22,7 +22,7 @@ public class ClienteTestDataBuilder {
 	private static final String CIUDAD = "Armenia";
 	private static final String DIRECCION_ENTREGA = "B/7 de Agosto";
 	private static final String USUARIO = "jjbarser";
-	private static final String PASSWORD = "xxxxxx";
+	private static final String CONTRASENIA = "xxxxxx";
 
 	private int idCliente;
 	private int identificacion;
@@ -34,7 +34,7 @@ public class ClienteTestDataBuilder {
 	private String ciudad;
 	private String direccionEntrega;
 	private String usuario;
-	private String password;
+	private String contrasenia;
 
 	/**
 	 * @param idCliente
@@ -60,7 +60,7 @@ public class ClienteTestDataBuilder {
 		this.ciudad = CIUDAD;
 		this.direccionEntrega = DIRECCION_ENTREGA;
 		this.usuario = USUARIO;
-		this.password = PASSWORD;
+		this.contrasenia = CONTRASENIA;
 	}
 
 	public ClienteTestDataBuilder conIdCliente(int idCliente) {
@@ -113,14 +113,14 @@ public class ClienteTestDataBuilder {
 		return this;
 	}
 
-	public ClienteTestDataBuilder conContraseña(String password) {
-		this.password = password;
+	public ClienteTestDataBuilder conContrasenia(String password) {
+		this.contrasenia = password;
 		return this;
 	}
 
 	public Cliente build() {
 		return new Cliente(this.idCliente, this.identificacion, this.nombre, this.apellido, this.fechaNacimiento,
-				this.correo, this.celular, this.ciudad, this.direccionEntrega, this.usuario, this.password);
+				this.correo, this.celular, this.ciudad, this.direccionEntrega, this.usuario, this.contrasenia);
 	}
 
 }
