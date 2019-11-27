@@ -97,7 +97,7 @@ public class ControladorPrendaTest {
 	@Test
 	public void errorEliminarTest() throws Exception {
 		ComandoPrenda comandoPrenda = new ComandoPrendaTestDataBuilder().build();
-		mockMvc.perform(delete("/prenda/eliminar/1234433")
+		mockMvc.perform(delete("/prenda/eliminar/4555")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsBytes(comandoPrenda)))
 				.andExpect(status().isOk());
