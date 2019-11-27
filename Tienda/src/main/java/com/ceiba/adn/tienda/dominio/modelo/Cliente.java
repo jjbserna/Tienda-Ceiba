@@ -5,10 +5,17 @@ package com.ceiba.adn.tienda.dominio.modelo;
 
 import java.util.Date;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * @author jeison.barbosa
  *
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cliente {
 	private static final String LA_IDENTIFICACION_ES_UN_DATO_OBLIGATORIO = "La identificacion es un dato obligatorio.";
 	private static final String EL_NOMBRE_ES_UN_DATO_OBLIGATORIO = "El nombre es un dato obligatorio.";
@@ -72,147 +79,7 @@ public class Cliente {
 		this.password = password;
 	}
 	
-	/**
-	 * 
-	 */
-	public Cliente() {
-	}
 
-	/**
-	 * @return the idCliente
-	 */
-	public int getIdCliente() {
-		return idCliente;
-	}
 
-	/**
-	 * @param idCliente the idCliente to set
-	 */
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	/**
-	 * @return the identificacion
-	 */
-	public int getIdentificacion() {
-		return identificacion;
-	}
-	/**
-	 * @param identificacion the identificacion to set
-	 */
-	public void setIdentificacion(int identificacion) {
-		this.identificacion = identificacion;
-	}
-	/**
-	 * @return the nombre
-	 */
-	public String getNombre() {
-		return nombre;
-	}
-	/**
-	 * @param nombre the nombre to set
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	/**
-	 * @return the apellido
-	 */
-	public String getApellido() {
-		return apellido;
-	}
-	/**
-	 * @param apellido the apellido to set
-	 */
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	/**
-	 * @return the fechaNacimiento
-	 */
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-	/**
-	 * @param fechaNacimiento the fechaNacimiento to set
-	 */
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-	/**
-	 * @return the correo
-	 */
-	public String getCorreo() {
-		return correo;
-	}
-	/**
-	 * @param correo the correo to set
-	 */
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-	/**
-	 * @return the celular
-	 */
-	public String getCelular() {
-		return celular;
-	}
-	/**
-	 * @param celular the celular to set
-	 */
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-	/**
-	 * @return the ciudad
-	 */
-	public String getCiudad() {
-		return ciudad;
-	}
-	/**
-	 * @param ciudad the ciudad to set
-	 */
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
-	}
-	/**
-	 * @return the direccionEntrega
-	 */
-	public String getDireccionEntrega() {
-		return direccionEntrega;
-	}
-	/**
-	 * @param direccionEntrega the direccionEntrega to set
-	 */
-	public void setDireccionEntrega(String direccionEntrega) {
-		this.direccionEntrega = direccionEntrega;
-	}
-	/**
-	 * @return the usuario
-	 */
-	public String getUsuario() {
-		return usuario;
-	}
-	/**
-	 * @param usuario the usuario to set
-	 */
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-	/**
-	 * @return the password
-	 */
-	public String getpassword() {
-		return password;
-	}
-	/**
-	 * @param password the password to set
-	 */
-	public void setpassword(String password) {
-		this.password = password;
-	}
-
-	
 	
 }

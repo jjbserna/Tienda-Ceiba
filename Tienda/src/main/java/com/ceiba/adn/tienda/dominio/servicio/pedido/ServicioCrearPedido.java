@@ -13,7 +13,6 @@ import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.dominio.modelo.Pedido;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPedido;
-import com.ceiba.adn.tienda.infraestructura.entidades.ClienteEntidad;
 
 /**
  * @author jeison.barbosa

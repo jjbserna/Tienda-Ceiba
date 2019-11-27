@@ -3,10 +3,19 @@
  */
 package com.ceiba.adn.tienda.dominio.modelo;
 
+import java.util.Date;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * @author jeison.barbosa
  *
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class Prenda {
 	public static final String LA_PRENDA_ES_UN_DATO_OBLIGATORIO = "La prenda es un dato obligatorio.";
 	public static final String EL_STOCK_ES_OBLIGATORIO = "El Stock es un dato obligatorio.";
@@ -42,105 +51,6 @@ public class Prenda {
 		this.stock = stock;
 	}
 
-	public Prenda() {
-	}
 
-	/**
-	 * @return the idPrenda
-	 */
-	public int getIdPrenda() {
-		return idPrenda;
-	}
-
-	/**
-	 * @param idPrenda the idPrenda to set
-	 */
-	public void setIdPrenda(int idPrenda) {
-		this.idPrenda = idPrenda;
-	}
-
-	/**
-	 * @return the codigoPrenda
-	 */
-	public int getCodigoPrenda() {
-		return codigoPrenda;
-	}
-
-	/**
-	 * @param codigoPrenda the codigoPrenda to set
-	 */
-	public void setCodigoPrenda(int codigoPrenda) {
-		this.codigoPrenda = codigoPrenda;
-	}
-
-	/**
-	 * @return the descripcion
-	 */
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	/**
-	 * @param descripcion the descripcion to set
-	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	/**
-	 * @return the estilo
-	 */
-	public String getEstilo() {
-		return estilo;
-	}
-
-	/**
-	 * @param estilo the estilo to set
-	 */
-	public void setEstilo(String estilo) {
-		this.estilo = estilo;
-	}
-
-	/**
-	 * @return the estado
-	 */
-	public boolean isEstado() {
-		return estado;
-	}
-
-	/**
-	 * @param estado the estado to set
-	 */
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-
-	/**
-	 * @return the precio
-	 */
-	public double getPrecio() {
-		return precio;
-	}
-
-	/**
-	 * @param precio the precio to set
-	 */
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-
-	/**
-	 * @return the stock
-	 */
-	public int getStock() {
-		return stock;
-	}
-
-	/**
-	 * @param stock the stock to set
-	 */
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
 
 }

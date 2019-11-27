@@ -5,10 +5,17 @@ package com.ceiba.adn.tienda.dominio.modelo;
 
 import java.util.Date;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * @author jeison.barbosa
  *
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class Pedido {
 	
 	public static final String EL_NUMERO_DE_ORDEN_ES_OBLIGATORIO = "El numero de orden es obligatorio";
@@ -32,68 +39,8 @@ public class Pedido {
 		this.fechaEntrega = fechaEntrega;
 		this.clienteId = clienteId;
 	}
-	public Pedido() {
-	}
-	/**
-	 * @return the idPedido
-	 */
-	public int getIdPedido() {
-		return idPedido;
-	}
-	/**
-	 * @param idPedido the idPedido to set
-	 */
-	public void setIdPedido(int idPedido) {
-		this.idPedido = idPedido;
-	}
-	/**
-	 * @return the numeroOrden
-	 */
-	public int getNumeroOrden() {
-		return numeroOrden;
-	}
-	/**
-	 * @param numeroOrden the numeroOrden to set
-	 */
-	public void setNumeroOrden(int numeroOrden) {
-		this.numeroOrden = numeroOrden;
-	}
-	/**
-	 * @return the fechaPedido
-	 */
-	public Date getFechaPedido() {
-		return fechaPedido;
-	}
-	/**
-	 * @param fechaPedido the fechaPedido to set
-	 */
-	public void setFechaPedido(Date fechaPedido) {
-		this.fechaPedido = fechaPedido;
-	}
-	/**
-	 * @return the fechaEntrega
-	 */
-	public Date getFechaEntrega() {
-		return fechaEntrega;
-	}
-	/**
-	 * @param fechaEntrega the fechaEntrega to set
-	 */
-	public void setFechaEntrega(Date fechaEntrega) {
-		this.fechaEntrega = fechaEntrega;
-	}
-	/**
-	 * @return the clienteId
-	 */
-	public Cliente getClienteId() {
-		return clienteId;
-	}
-	/**
-	 * @param clienteId the clienteId to set
-	 */
-	public void setClienteId(Cliente clienteId) {
-		this.clienteId = clienteId;
-	}
+
+
 	@Override
 	public String toString() {
 		return "Pedido [idPedido=" + idPedido + ", numeroOrden=" + numeroOrden + ", fechaPedido=" + fechaPedido
