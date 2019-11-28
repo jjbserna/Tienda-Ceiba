@@ -3,7 +3,11 @@
  */
 package com.ceiba.adn.tienda.infraestructura.controlador;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import javax.transaction.Transactional;
@@ -74,5 +78,22 @@ public class ControladorPedidoPrenda {
 				.content(objectMapper.writeValueAsString(comandoPedidoPrenda))).andExpect(status().isOk());
 	}
 	
+	@Test
+	public void listarTest() throws Exception {
+		crearTest();
+		mockMvc.perform(get("/pedidoprenda/1001")
+		.contentType(MediaType.APPLICATION_JSON))
+		.andExpect(status().isOk())
+		.andExpect(jsonPath("$", hasSize(1)));
+	}
 	
+	@Test
+	public void eliminarTest() throws Exception {
+		crearTest();
+		ComandoPedidoPrenda comandoPedidoPrenda = new ComandoPedidoPrendaTestDataBuilder().build();
+		mockMvc.perform(delete("/pedido/eliminar/1")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsBytes(comandoPedidoPrenda)))
+				.andExpect(status().isOk());
+	}
 }
