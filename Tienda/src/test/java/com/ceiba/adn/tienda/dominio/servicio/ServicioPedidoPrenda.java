@@ -42,21 +42,22 @@ public class ServicioPedidoPrenda {
 		Prenda prenda = new PrendaTestDataBuilder().build();
 		PedidoPrenda pedidoPrenda = new PedidoPrenda(comandoPedidoPrenda.getIdPedidoPrenda(), pedido, prenda,
 				comandoPedidoPrenda.getCantidad(), comandoPedidoPrenda.getValorTotal());
-		when(repositorioPedidoPrenda.buscarPorId(comandoPedidoPrenda.getIdPedidoPrenda())).thenReturn(comandoPedidoPrenda);
+		when(repositorioPedidoPrenda.buscarPorId(comandoPedidoPrenda.getIdPedidoPrenda()))
+				.thenReturn(comandoPedidoPrenda);
 		ServicioCrearPedidoPrenda servicioCrearPedidoPrenda = new ServicioCrearPedidoPrenda(repositorioPedidoPrenda,
 				repositorioPedido, repositorioPrenda);
-		
+
 		try {
 			// act
 			servicioCrearPedidoPrenda.crear(pedidoPrenda);
 			fail();
-			
+
 		} catch (ExcepcionVenta e) {
 			// assert
 			assertEquals(ServicioCrearPedidoPrenda.EL_PEDIDO_PRENDA_YA_EXISTE, e.getMessage());
 		}
 	}
-	
+
 	@Test
 	public void crearErrorExistePrendaTest() {
 		// arrange
@@ -72,35 +73,41 @@ public class ServicioPedidoPrenda {
 		when(repositorioPedido.buscar(pedido.getNumeroOrden())).thenReturn(null);
 		ServicioCrearPedidoPrenda servicioCrearPedidoPrenda = new ServicioCrearPedidoPrenda(repositorioPedidoPrenda,
 				repositorioPedido, repositorioPrenda);
-		
+
 		try {
 			// act
 			servicioCrearPedidoPrenda.crear(pedidoPrenda);
 			fail();
-			
+
 		} catch (ExcepcionVenta e) {
 			// assert
 			assertEquals(ServicioCrearPedidoPrenda.EL_PEDIDO_O_PRENDA_NO_EXISTE, e.getMessage());
 		}
 	}
+
 	@Test
 	public void eliminarFalsoTest() {
 		// arrange
 		RepositorioPedidoPrenda repositorioPedidoPrenda = Mockito.mock(RepositorioPedidoPrenda.class);
 		ComandoPedidoPrenda comandoPedidoPrenda = new ComandoPedidoPrendaTestDataBuilder().build();
 		when(repositorioPedidoPrenda.buscarPorId(comandoPedidoPrenda.getIdPedidoPrenda())).thenReturn(null);
-		ServicioEliminarPedidoPrenda servicioEliminarPedidoPrenda=new ServicioEliminarPedidoPrenda(repositorioPedidoPrenda);
+		ServicioEliminarPedidoPrenda servicioEliminarPedidoPrenda = new ServicioEliminarPedidoPrenda(
+				repositorioPedidoPrenda);
 		// act-assert
 		assertFalse(servicioEliminarPedidoPrenda.eliminar(comandoPedidoPrenda.getIdPedidoPrenda()));
 	}
+
 	@Test
 	public void eliminarTest() {
 		// arrange
 		RepositorioPedidoPrenda repositorioPedidoPrenda = Mockito.mock(RepositorioPedidoPrenda.class);
 		ComandoPedidoPrenda comandoPedidoPrenda = new ComandoPedidoPrendaTestDataBuilder().build();
-		when(repositorioPedidoPrenda.buscarPorId(comandoPedidoPrenda.getIdPedidoPrenda())).thenReturn(comandoPedidoPrenda);
-		ServicioEliminarPedidoPrenda servicioEliminarPedidoPrenda=new ServicioEliminarPedidoPrenda(repositorioPedidoPrenda);
+		when(repositorioPedidoPrenda.buscarPorId(comandoPedidoPrenda.getIdPedidoPrenda()))
+				.thenReturn(comandoPedidoPrenda);
+		ServicioEliminarPedidoPrenda servicioEliminarPedidoPrenda = new ServicioEliminarPedidoPrenda(
+				repositorioPedidoPrenda);
 		// act-assert
 		assertTrue(servicioEliminarPedidoPrenda.eliminar(comandoPedidoPrenda.getIdPedidoPrenda()));
 	}
+	
 }

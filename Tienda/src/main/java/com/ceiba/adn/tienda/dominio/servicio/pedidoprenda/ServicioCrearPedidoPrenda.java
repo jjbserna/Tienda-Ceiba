@@ -3,6 +3,9 @@
  */
 package com.ceiba.adn.tienda.dominio.servicio.pedidoprenda;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedido;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoPrenda;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
@@ -48,12 +51,23 @@ public class ServicioCrearPedidoPrenda {
 				pedido.setNumeroOrden(comandoPedido.getNumeroOrden());
 				pedidoPrenda.setPedidoId(pedido);
 				pedidoPrenda.setPrendaId(prenda);
+				pedidoPrenda.setValorTotal(esLunes(new Date(), pedidoPrenda.getValorTotal()));
 				return repositorioPedidoPrenda.crear(pedidoPrenda);
 			}
 			throw new ExcepcionVenta(EL_PEDIDO_O_PRENDA_NO_EXISTE);
 		}
 		throw new ExcepcionVenta(EL_PEDIDO_PRENDA_YA_EXISTE);
 
+	}
+	
+	public double esLunes(Date fechaSolicitud, double valor) {
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(fechaSolicitud);
+		if(cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+			return valor*2;
+		}
+		return valor;
 	}
 
 }
