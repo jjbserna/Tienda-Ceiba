@@ -3,9 +3,7 @@
  */
 package com.ceiba.adn.tienda.infraestructura.controlador;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import javax.transaction.Transactional;
@@ -25,6 +23,12 @@ import org.springframework.web.context.WebApplicationContext;
 import com.ceiba.adn.tienda.TiendaApplication;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoClienteTestDataBuilder;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedido;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoPrenda;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoPrendaTestDataBuilder;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedidoTestDataBuilder;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrenda;
+import com.ceiba.adn.tienda.aplicacion.comando.ComandoPrendaTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -35,7 +39,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest(classes = TiendaApplication.class)
 @AutoConfigureMockMvc
 @Transactional
-public class ControladorCliente {
+public class ControladorPedidoPrenda {
 	@Autowired
 	private ObjectMapper objectMapper;
 
@@ -49,34 +53,26 @@ public class ControladorCliente {
 	public void setup() throws Exception {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
+	
 	@Test
 	public void crearTest() throws Exception {
-		ComandoCliente comandoCliente= new ComandoClienteTestDataBuilder().build();
+		
+		ComandoCliente comandoCliente=new ComandoClienteTestDataBuilder().build();
 		mockMvc.perform(post("/cliente/crear").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(comandoCliente))).andExpect(status().isOk());
+		
+		ComandoPedido comandoPedido=new ComandoPedidoTestDataBuilder().build();
+		mockMvc.perform(post("/pedido/crear").contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsString(comandoPedido))).andExpect(status().isOk());
+		
+		ComandoPrenda comandoPrenda= new ComandoPrendaTestDataBuilder().build();
+		mockMvc.perform(post("/prenda/crear").contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsString(comandoPrenda))).andExpect(status().isOk());
+		
+		ComandoPedidoPrenda comandoPedidoPrenda = new ComandoPedidoPrendaTestDataBuilder().build();
+		mockMvc.perform(post("/pedidoprenda/crear").contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsString(comandoPedidoPrenda))).andExpect(status().isOk());
 	}
-	
-	@Test
-	public void eliminarTest() throws Exception {
-		crearTest();
-		ComandoCliente comandoCliente= new ComandoClienteTestDataBuilder().build();
-		mockMvc.perform(delete("/cliente/eliminar/123456")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapper.writeValueAsBytes(comandoCliente)))
-				.andExpect(status().isOk());
-	}
-	
-	@Test
-	public void actualizarTest() throws Exception {
-		crearTest();
-		ComandoCliente comandoCliente= new ComandoClienteTestDataBuilder().build();
-		mockMvc.perform(put("/cliente")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapper.writeValueAsBytes(comandoCliente)))
-				.andExpect(status().isOk());
-	}
-	
-
 	
 	
 }
