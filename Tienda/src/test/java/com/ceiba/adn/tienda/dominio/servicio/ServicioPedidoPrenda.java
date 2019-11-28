@@ -83,7 +83,7 @@ public class ServicioPedidoPrenda {
 			assertEquals(ServicioCrearPedidoPrenda.EL_PEDIDO_O_PRENDA_NO_EXISTE, e.getMessage());
 		}
 	}
-	
+	@Test
 	public void eliminarFalsoTest() {
 		// arrange
 		RepositorioPedidoPrenda repositorioPedidoPrenda = Mockito.mock(RepositorioPedidoPrenda.class);
@@ -93,7 +93,7 @@ public class ServicioPedidoPrenda {
 		// act-assert
 		assertFalse(servicioEliminarPedidoPrenda.eliminar(comandoPedidoPrenda.getIdPedidoPrenda()));
 	}
-	
+	@Test
 	public void eliminarTest() {
 		// arrange
 		RepositorioPedidoPrenda repositorioPedidoPrenda = Mockito.mock(RepositorioPedidoPrenda.class);
