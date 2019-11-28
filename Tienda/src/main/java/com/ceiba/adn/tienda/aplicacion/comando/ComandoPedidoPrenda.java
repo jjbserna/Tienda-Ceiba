@@ -5,8 +5,6 @@ package com.ceiba.adn.tienda.aplicacion.comando;
 
 import com.ceiba.adn.tienda.dominio.modelo.Pedido;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
-import com.ceiba.adn.tienda.infraestructura.entidades.PedidoEntidad;
-import com.ceiba.adn.tienda.infraestructura.entidades.PrendaEntidad;
 
 /**
  * @author jeison.barbosa
