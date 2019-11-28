@@ -1,0 +1,53 @@
+<div class="create-container">
+  <h1 *ngIf="!editing">
+      {{ "forms.salida_paciente" | translate }} {{id}}
+  </h1>
+  <div class="form">
+    <form [formGroup]="myForm">
+      <div class="form-group">
+        <p>Días urgencia: <label>{{ factura.numeroDias}}</label></p>
+      </div>
+      <div class="form-group">
+        <p>Valor día urgencia: <label>{{ factura.valorDiario  }} </label></p>
+      </div>
+      <div class="form-group">
+        <p>Valor día urgencia festivo: <label>{{ factura.valorDiarioFestivo  }} </label></p>
+      </div>
+      <div class="form-group">
+        <p>Valor total urgencia: <label>{{ factura.valorTotalDiasSinHospitalizacion }}</label> </p>
+      </div>
+      <br>
+      <div class="form-group">
+        <p>Días hospitalización: <label>{{ factura.numeroDiasHospitalizacion }}</label></p>
+      </div>
+     
+      <div class="form-group">
+        <p>Valor día hospitalización: <label>{{ factura.valorDiarioHospitalizacion  }} </label></p>
+      </div>
+      
+      <div class="form-group">
+        <p>Valor día hospitalización festivo: <label>{{ factura.valorDiarioHospitalizacionFestivo  }} </label></p>
+      </div>
+      
+      <div class="form-group">
+        <p>Valor total hospitalización: <label>{{ factura.valorTotalHospitalizacion }}</label></p>
+      </div>
+      <br>
+      <div class="form-group">
+        <p>Valor cirugía: <label>{{ factura.valorCirugia }} </label></p>
+      </div>
+      <br>
+      <div class="form-group">
+        <p>Valor total a pagar: <label>{{ factura.valorTotal }}</label> </p>
+      </div>
+
+    </form>
+    <button id="facturar" class="btn btn-success" (click)="facturar(id)">
+      {{ "forms.facturar" | translate }}
+  </button>
+  <p> </p>
+  <button class="btn btn-primary" (click)="confirmVolver()">
+    {{ "forms.return" | translate }}
+</button>
+  </div>
+</div>
