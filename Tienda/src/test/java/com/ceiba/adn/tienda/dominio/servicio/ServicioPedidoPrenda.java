@@ -5,6 +5,7 @@ package com.ceiba.adn.tienda.dominio.servicio;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
@@ -83,7 +84,7 @@ public class ServicioPedidoPrenda {
 		}
 	}
 	
-	public void eliminarTest() {
+	public void eliminarFalsoTest() {
 		// arrange
 		RepositorioPedidoPrenda repositorioPedidoPrenda = Mockito.mock(RepositorioPedidoPrenda.class);
 		ComandoPedidoPrenda comandoPedidoPrenda = new ComandoPedidoPrendaTestDataBuilder().build();
@@ -91,5 +92,15 @@ public class ServicioPedidoPrenda {
 		ServicioEliminarPedidoPrenda servicioEliminarPedidoPrenda=new ServicioEliminarPedidoPrenda(repositorioPedidoPrenda);
 		// act-assert
 		assertFalse(servicioEliminarPedidoPrenda.eliminar(comandoPedidoPrenda.getIdPedidoPrenda()));
+	}
+	
+	public void eliminarTest() {
+		// arrange
+		RepositorioPedidoPrenda repositorioPedidoPrenda = Mockito.mock(RepositorioPedidoPrenda.class);
+		ComandoPedidoPrenda comandoPedidoPrenda = new ComandoPedidoPrendaTestDataBuilder().build();
+		when(repositorioPedidoPrenda.buscarPorId(comandoPedidoPrenda.getIdPedidoPrenda())).thenReturn(comandoPedidoPrenda);
+		ServicioEliminarPedidoPrenda servicioEliminarPedidoPrenda=new ServicioEliminarPedidoPrenda(repositorioPedidoPrenda);
+		// act-assert
+		assertTrue(servicioEliminarPedidoPrenda.eliminar(comandoPedidoPrenda.getIdPedidoPrenda()));
 	}
 }
