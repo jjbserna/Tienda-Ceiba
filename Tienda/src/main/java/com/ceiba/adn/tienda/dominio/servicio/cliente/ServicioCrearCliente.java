@@ -15,7 +15,7 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
 public class ServicioCrearCliente {
 
 	
-	private static final String CLIENTE_EXISTE = "El Cliente ya existe";
+	public static final String CLIENTE_EXISTE = "El Cliente ya existe";
 	private RepositorioCliente repositorioCliente;
 
 	

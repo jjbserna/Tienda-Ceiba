@@ -4,7 +4,6 @@
 package com.ceiba.adn.tienda.aplicacion.comando;
 
 import com.ceiba.adn.tienda.dominio.modelo.Pedido;
-import com.ceiba.adn.tienda.dominio.modelo.PedidoPrenda;
 import com.ceiba.adn.tienda.dominio.modelo.Prenda;
 
 /**

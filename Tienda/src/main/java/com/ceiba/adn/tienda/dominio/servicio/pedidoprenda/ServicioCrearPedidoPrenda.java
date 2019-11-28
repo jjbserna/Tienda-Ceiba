@@ -19,8 +19,8 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioPrenda;
  *
  */
 public class ServicioCrearPedidoPrenda {
-	private static final String EL_PEDIDO_PRENDA_YA_EXISTE = "Ya existe el codigo asignado a el pedido-prenda";
-	private static final String EL_PEDIDO_O_PRENDA_NO_EXISTE ="El pedido o la prenda no existen";
+	public static final String EL_PEDIDO_PRENDA_YA_EXISTE = "Ya existe el codigo asignado a el pedido-prenda";
+	public static final String EL_PEDIDO_O_PRENDA_NO_EXISTE ="El pedido o la prenda no existen";
 	private RepositorioPedidoPrenda repositorioPedidoPrenda;
 	private RepositorioPedido repositorioPedido;
 	private RepositorioPrenda repositorioPrenda;

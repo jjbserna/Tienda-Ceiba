@@ -14,7 +14,7 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
  */
 public class ServicioActualizarCliente {
 
-	private static final String EL_CLIENTE_NO_EXISTE="El cliente no existe en la base de datos";
+	public static final String EL_CLIENTE_NO_EXISTE="El cliente no existe en la base de datos";
 	private RepositorioCliente repositorioCliente;
 
 	/**
