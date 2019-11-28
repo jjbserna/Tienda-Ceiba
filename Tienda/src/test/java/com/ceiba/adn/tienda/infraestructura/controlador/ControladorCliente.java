@@ -5,6 +5,7 @@ package com.ceiba.adn.tienda.infraestructura.controlador;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import javax.transaction.Transactional;
@@ -64,4 +65,15 @@ public class ControladorCliente {
 				.content(objectMapper.writeValueAsBytes(comandoCliente)))
 				.andExpect(status().isOk());
 	}
+	
+	@Test
+	public void actualizarTest() throws Exception {
+		crearTest();
+		ComandoCliente comandoCliente= new ComandoClienteTestDataBuilder().build();
+		mockMvc.perform(put("/cliente")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsBytes(comandoCliente)))
+				.andExpect(status().isOk());
+	}
+	
 }
