@@ -84,6 +84,6 @@ public class ServicioCrearPedido {
 	public boolean validarFecha(Date fechaPedido) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(fechaPedido);
-		return (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY); 
+		return (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY); 
 	}
 }

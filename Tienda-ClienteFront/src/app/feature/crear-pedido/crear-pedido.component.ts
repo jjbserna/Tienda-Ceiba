@@ -230,9 +230,21 @@ eliminarItem(idPedidoPrenda: number, index:number){
 
 
 nuevoPedido(){
-  this.addClothForm.reset();
-  this.createForm.reset();
-  this.cliente = null;
+  swal({
+    title: this.translate.instant("alerts.success"),
+    text: "Se han registrado los productos al pedido",
+    type: "success",
+    showCancelButton: false,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: this.translate.instant("buttons.ok"),
+  }).then(result => {
+    this.addClothForm.reset();
+    this.createForm.reset();
+    this.cliente = null;
+  });
+
+
 }
 
 get numeroOrden() { return this.createForm.get("numeroOrden"); }

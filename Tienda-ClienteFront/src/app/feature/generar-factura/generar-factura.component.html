@@ -1,0 +1,81 @@
+<div class="create-container">
+    <h1 *ngIf="!editing" style="text-align: left;">
+        Factura
+    </h1>
+
+    <div class="col-12" style="text-align: left;">
+        <div class="row">
+            <div class="col-12">
+                <div class="form">
+                    <form [formGroup]="myForm">
+                        <div class="col-md-8">
+                            <input id="fname" name="name" type="number" formControlName="numeroOrden" placeholder="Numero de Orden" class="form-control">
+                        </div>
+                        <p>
+
+                        </p>
+                        <button id="facturar" class="btn btn-outline-success my-2 my-sm-0" (click)="facturar()">
+                                Facturar
+                        </button>
+                        <p></p>
+
+                        <table class="table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">numero de Orden</th>
+                                    <th scope="col">Fecha de Pedido</th>
+                                    <th scope="col">Fecha de Entrega</th>
+                                    <th scope="col">Total Factura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pedido of listaPedidoPrenda; let ultimo=last;">
+                                    <td>{{ pedido.pedidoId.clienteId.identificacion}}</td>
+                                    <td>{{ pedido.pedidoId.clienteId.nombre}}</td>
+                                    <td>{{ pedido.pedidoId.clienteId.apellido}}</td>
+                                    <td>{{ pedido.pedidoId.numeroOrden}}</td>
+                                    <td>{{ pedido.pedidoId.fechaPedido}}</td>
+                                    <td>{{ pedido.pedidoId.fechaEntrega}}</td>
+                                    <td>{{ pedido.valorTotal}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                        <hr>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Codigo de Prenda</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Estilo</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pedido of listaPedidoPrenda">
+                                    <td>{{ pedido.prendaId.codigoPrenda}}</td>
+                                    <td>{{ pedido.prendaId.descripcion}}</td>
+                                    <td>{{ pedido.prendaId.estilo}}</td>
+                                    <td>{{ pedido.cantidad}}</td>
+                                    <td>{{ pedido.prendaId.precio}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                    </form>
+
+                    <p> </p>
+                    <button class="btn btn-outline-success my-2 my-sm-0" (click)="volver()">
+                        volver
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

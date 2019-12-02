@@ -21,6 +21,7 @@ import { LOCALE_ID } from "@angular/core";
 import { MostrarFacturaComponent } from './feature/mostrar-factura/mostrar-factura.component';
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
+import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
 
 defineLocale("es", esLocale);
 registerLocaleData(es);
@@ -33,7 +34,8 @@ registerLocaleData(es);
     MostrarFacturaComponent,
     CrearPrendaComponent,
     CrearClienteComponent,
-    CrearPedidoComponent
+    CrearPedidoComponent,
+    GenerarFacturaComponent
   ],
   imports: [
     BrowserModule,
