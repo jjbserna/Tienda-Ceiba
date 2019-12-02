@@ -1,61 +1,71 @@
 <div class="create-container">
     <h1 *ngIf="!editing">
-        {{ "forms.create_urgencia" | translate }}
+        Ingresar Prenda
     </h1>
     <h1 *ngIf="editing">
-        {{ "forms.edit_urgencia" | translate }}
+        Ingresar Prenda
     </h1>
     <div class="form">
         <form [formGroup]="myForm">
             <div class="form-group">
-                <label>Codigo de prenda</label>
-                <input id="codigoPrenda" type="number" class="form-control" formControlName="codigoPrenda" />
+
+                <input id="codigoPrenda" type="number" class="form-control" formControlName="codigoPrenda" placeholder="Codigo de Prenda" />
                 <span *ngIf="controlHasError('codigoPrenda', 'required')">
           <strong>{{ "validation.required_field" | translate }}</strong>
         </span>
             </div>
             <div class="form-group">
-                <label>Descripcion</label>
-                <input id="descripcion" type="text" class="form-control" formControlName="descripcion" />
+
+                <input id="descripcion" type="text" class="form-control" formControlName="descripcion" placeholder="Descripcion" />
                 <span *ngIf="controlHasError('descripcion', 'required')">
           <strong>{{ "validation.required_field" | translate }}</strong>
         </span>
             </div>
             <div class="form-group">
-                <label>Estilo</label>
-                <input id="estilo" type="text" class="form-control" formControlName="estilo" />
+
+                <input id="estilo" type="text" class="form-control" formControlName="estilo" placeholder="Estilo" />
                 <span *ngIf="controlHasError('estilo', 'required')">
           <strong>{{ "validation.required_field" | translate }}</strong>
         </span>
             </div>
             <div class="form-group">
-                <label>Estado</label>
-                <input id="estado" type="text" class="form-control" formControlName="estado" />
-                <span *ngIf="controlHasError('estado', 'required')">
-          <strong>{{ "validation.required_field" | translate }}</strong>
-        </span>
-            </div>
-            <div class="form-group">
-                <label>Precio</label>
-                <input id="precio" type="text" class="form-control" formControlName="precio" />
+
+                <input id="precio" type="number" class="form-control" formControlName="precio" placeholder="Precio" />
                 <span *ngIf="controlHasError('precio', 'required')">
         <strong>{{ "validation.required_field" | translate }}</strong>
       </span>
             </div>
             <div class="form-group">
-                <label>Stock</label>
-                <input id="stock" type="text" class="form-control" formControlName="stock" />
+
+                <input id="stock" type="number" class="form-control" formControlName="stock" placeholder="Stock" />
                 <span *ngIf="controlHasError('stock', 'required')">
       <strong>{{ "validation.required_field" | translate }}</strong>
     </span>
             </div>
-            <button id="botonCrearPrenda" class="btn btn-primary" (click)="crearPrenda()">
-          Aceptar
-      </button>
-            <p> </p>
-            <button id="botonVolver" class="btn btn-primary" (click)="volver()">
-        Volver
-    </button>
+
+
+            <div class="form-group">
+                <input type="checkbox" class="form-control" id="estado" formControlName="estado">
+                <label class="form-check-label" for="materialchecked">Disponible</label>
+
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4">
+                        <button id="botonCrearPrenda" class="btn btn-outline-success my-2 my-sm-0" (click)="crearPrenda()">
+                                    Aceptar
+                                </button>
+                    </div>
+                    <div class="col-5">
+                        <button id="botonVolver" [routerLink]="['/tienda']" class="btn btn-outline-success my-2 my-sm-0" (click)="volver() ">
+                                Volver
+                    </button>
+                    </div>
+
+                </div>
+            </div>
+
+
         </form>
     </div>
 </div>

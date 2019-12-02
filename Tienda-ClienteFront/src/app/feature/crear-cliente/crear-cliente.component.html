@@ -1,0 +1,100 @@
+<div class="create-container">
+    <h1 *ngIf="!editing">
+        Registrar Cliente
+    </h1>
+    <h1 *ngIf="editing">
+        Registrar Cliente
+    </h1>
+    <div class="form">
+        <form [formGroup]="myForm">
+            <div class="form-group">
+                <label>Identificacion</label>
+                <input id="identificacion" type="number" class="form-control" formControlName="identificacion" placeholder="Ingrese Identificación" />
+                <span *ngIf="controlHasError('identificacion', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="nombre" type="text" class="form-control" formControlName="nombre" placeholder="Nombre" />
+                <span *ngIf="controlHasError('nombre', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="apellido" type="text" class="form-control" formControlName="apellido" placeholder="Apellido" />
+                <span *ngIf="controlHasError('apellido', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+                <label for="">Fecha de Nacimiento</label>
+                <input id="fechaNacimiento" type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Fecha de Nacimiento" />
+                <span *ngIf="controlHasError('fechaNacimiento', 'required')"> 
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="correo" type="email" class="form-control" formControlName="correo" placeholder="Correo nombre@ceiba.com.co" />
+                <span *ngIf="controlHasError('correo', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="celular" type="number" class="form-control" formControlName="celular" placeholder="Celular" />
+                <span *ngIf="controlHasError('celular', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="ciudad" type="text" class="form-control" formControlName="ciudad" placeholder="Ciudad" />
+                <span *ngIf="controlHasError('ciudad', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="direccionEntrega" type="text" class="form-control" formControlName="direccionEntrega" placeholder="Dirección de Entrega" />
+                <span *ngIf="controlHasError('direccionEntrega', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="usuario" type="text" class="form-control" formControlName="usuario" placeholder="Usuario" />
+                <span *ngIf="controlHasError('usuario', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="form-group">
+
+                <input id="password" type="password" class="form-control" formControlName="password" placeholder="Password" />
+                <span *ngIf="controlHasError('password', 'required')">
+              <strong>{{ "validation.required_field" | translate }}</strong>
+            </span>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-4">
+                        <button id="botonCrearPrenda" class="btn btn-outline-success my-2 my-sm-0" (click)="crearCliente()">
+                        Aceptar
+                    </button>
+                    </div>
+                    <div class="col-5">
+                        <button id="botonVolver" [routerLink]="['/tienda']" class="btn btn-outline-success my-2 my-sm-0" (click)="volver() ">
+                      Volver
+                  </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </form>
+    </div>
+</div>

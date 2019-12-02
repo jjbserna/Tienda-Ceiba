@@ -25,13 +25,18 @@ public class ServicioListarPedidoPrenda {
 	}
 
 	public List<ComandoPedidoPrenda> listarPorPedido(int numeroOrden) {
+		double valorTotal=0;
 		List<ComandoPedidoPrenda> listaComandoPrenda = repositorioPedidoPrenda.listar();
 		List<ComandoPedidoPrenda> listaFiltro = new ArrayList<>();
 		for (int i = 0; i < listaComandoPrenda.size(); i++) {
 			if (listaComandoPrenda.get(i).getPedidoId().getNumeroOrden() == numeroOrden) {
+				valorTotal=valorTotal+listaComandoPrenda.get(i).getValorTotal();
+				listaComandoPrenda.get(i).setValorTotal(valorTotal);
 				listaFiltro.add(listaComandoPrenda.get(i));
+				
 			}
 		}
+
 		return listaFiltro;
 
 	}

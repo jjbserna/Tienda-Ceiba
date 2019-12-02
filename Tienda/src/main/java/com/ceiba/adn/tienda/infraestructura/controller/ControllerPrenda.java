@@ -5,6 +5,7 @@ package com.ceiba.adn.tienda.infraestructura.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,7 @@ import com.ceiba.adn.tienda.aplicacion.manejador.prenda.ManejadorListarPrenda;
  * @version 1.0
  *
  */
+
 @RestController
 @RequestMapping("/prenda")
 public class ControllerPrenda {

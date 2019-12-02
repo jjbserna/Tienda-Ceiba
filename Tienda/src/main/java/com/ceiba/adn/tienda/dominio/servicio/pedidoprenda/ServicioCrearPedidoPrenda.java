@@ -44,14 +44,25 @@ public class ServicioCrearPedidoPrenda {
 			ComandoPedido comandoPedido = repositorioPedido.buscar(pedidoPrenda.getPedidoId().getIdPedido());
 			ComandoPrenda comandoPrenda = repositorioPrenda.buscarPorCodigo(pedidoPrenda.getPrendaId().getIdPrenda());
 			if(comandoPedido != null && comandoPrenda != null) {
-				Pedido pedido = new Pedido();
 				Prenda prenda = new Prenda();
-				pedido.setIdPedido(comandoPedido.getIdPedido());
 				prenda.setIdPrenda(comandoPrenda.getIdPrenda());
+				prenda.setDescripcion(comandoPrenda.getDescripcion());
+				prenda.setPrecio(comandoPrenda.getPrecio());
+				prenda.setCodigoPrenda(comandoPrenda.getCodigoPrenda());
+				
+
+				Pedido pedido = new Pedido();
+				pedido.setIdPedido(comandoPedido.getIdPedido());
 				pedido.setNumeroOrden(comandoPedido.getNumeroOrden());
+				pedido.setFechaPedido(comandoPedido.getFechaPedido());
+				pedido.setFechaEntrega(comandoPedido.getFechaEntrega());
+				
+				
 				pedidoPrenda.setPedidoId(pedido);
 				pedidoPrenda.setPrendaId(prenda);
+				pedidoPrenda.setValorTotal(pedidoPrenda.getCantidad()*prenda.getPrecio());
 				pedidoPrenda.setValorTotal(esLunes(new Date(), pedidoPrenda.getValorTotal()));
+
 				return repositorioPedidoPrenda.crear(pedidoPrenda);
 			}
 			throw new ExcepcionVenta(EL_PEDIDO_O_PRENDA_NO_EXISTE);

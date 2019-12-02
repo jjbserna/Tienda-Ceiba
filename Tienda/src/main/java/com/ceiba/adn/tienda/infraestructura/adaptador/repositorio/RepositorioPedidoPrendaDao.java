@@ -32,9 +32,9 @@ public class RepositorioPedidoPrendaDao implements RepositorioPedidoPrenda {
 	@Override
 	@Transactional
 	public ComandoPedidoPrenda crear(PedidoPrenda pedidoPrenda) {
-		 PedidoPrendaEntidad pedidoPrendaEntidad=modelMapper.map(pedidoPrenda, PedidoPrendaEntidad.class);
-		 pedidoPrendaDao.save(pedidoPrendaEntidad);
-		 return modelMapper.map(pedidoPrenda, ComandoPedidoPrenda.class);
+		PedidoPrendaEntidad pedidoPrendaEntidad = modelMapper.map(pedidoPrenda, PedidoPrendaEntidad.class);
+		pedidoPrenda.setIdPedidoPrenda(pedidoPrendaDao.save(pedidoPrendaEntidad).getIdPedidoPrenda());
+		return modelMapper.map(pedidoPrenda, ComandoPedidoPrenda.class);
 	}
 
 	@Override
@@ -45,8 +45,8 @@ public class RepositorioPedidoPrendaDao implements RepositorioPedidoPrenda {
 
 	@Override
 	public List<ComandoPedidoPrenda> listar() {
-		List<PedidoPrendaEntidad> listaPedidoPrendaEntidad=pedidoPrendaDao.findAll();
-		List<ComandoPedidoPrenda> listaComandoPedidoPrenda=new ArrayList<ComandoPedidoPrenda>();
+		List<PedidoPrendaEntidad> listaPedidoPrendaEntidad = pedidoPrendaDao.findAll();
+		List<ComandoPedidoPrenda> listaComandoPedidoPrenda = new ArrayList<ComandoPedidoPrenda>();
 		for (int i = 0; i < listaPedidoPrendaEntidad.size(); i++) {
 			listaComandoPedidoPrenda.add(modelMapper.map(listaPedidoPrendaEntidad.get(i), ComandoPedidoPrenda.class));
 		}

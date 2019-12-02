@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TiendaComponent } from './feature/tienda/tienda.component';
 import { CrearPrendaComponent } from './feature/crear-prenda/crear-prenda.component';
+import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
+import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { MostrarFacturaComponent } from './feature/mostrar-factura/mostrar-factura.component';
 
 const routes: Routes = [
@@ -11,6 +13,8 @@ const routes: Routes = [
     children: [
       { path: "tienda", component: TiendaComponent },
       { path: "prenda-form", component: CrearPrendaComponent },
+      { path: "cliente-form", component: CrearClienteComponent },
+      { path: "pedido-form", component: CrearPedidoComponent },
       { path: "factura/:id", component: MostrarFacturaComponent }
     ]
   }
