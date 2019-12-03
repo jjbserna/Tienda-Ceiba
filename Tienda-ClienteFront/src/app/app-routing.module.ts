@@ -5,7 +5,7 @@ import { CrearPrendaComponent } from './feature/crear-prenda/crear-prenda.compon
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
-import { MostrarFacturaComponent } from './feature/mostrar-factura/mostrar-factura.component';
+
 
 const routes: Routes = [
   { path: "", component: TiendaComponent },
@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: "cliente-form", component: CrearClienteComponent },
       { path: "pedido-form", component: CrearPedidoComponent },
       { path: "factura-form", component: GenerarFacturaComponent },
-      { path: "factura/:id", component: MostrarFacturaComponent }
+
     ]
   }
 ];

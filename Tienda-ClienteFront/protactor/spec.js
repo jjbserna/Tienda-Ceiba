@@ -1,71 +1,145 @@
 // spec.js
 
-//Patron page object
+
 describe('Prueba flujo principal', function() {
-    it('should have a title', function() {
-      browser.get('http://localhost:4200/');
-  
-      expect(browser.getTitle()).toEqual('Urgencias');
+    it('debe tener titulo', function() {
+        browser.get('http://localhost:4200/');
+
+        expect(browser.getTitle()).toEqual('Tienda');
     });
-  });
+});
 
-  describe('Boton nueva urgencia', function() {
-    it('crear urgencia', function() {
-      browser.get('http://localhost:4200/');
-  
-      element(by.id('crearUrgencia')).click();
-  
-      expect(browser.getCurrentUrl()).toBe('http://localhost:4200/urgencia-form'); 
+describe('Boton crear producto', function() {
+    it('crear Producto', function() {
+        browser.get('http://localhost:4200/');
+
+        element(by.id('crearProducto')).click();
+
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/prenda-form');
     });
-  });
+});
 
-  describe('Creacion urgencia', function() {
-    it('creacion nueva urgencia', function() {
-      browser.get('http://localhost:4200/urgencia-form');
-      element(by.id('identificacion')).sendKeys(1094942293);
-      element(by.id('nombrePaciente')).sendKeys("Jhon");
-      element(by.id('fechaIngreso')).sendKeys("02/02/2012");
-      element(by.id("eps")).sendKeys("SURA");
-      element(by.id('botonCrearUrgencia')).click();
-      element(by.buttonText('OK')).click();
-      
-  
-      expect(browser.getCurrentUrl()).toBe('http://localhost:4200/urgencias'); 
+describe('Crear producto', function() {
+    it('Creacion nuevo producto', function() {
+        browser.get('http://localhost:4200/prenda-form');
+        element(by.id('codigoPrenda')).sendKeys(99999);
+        browser.sleep(1000);
+        element(by.id('descripcion')).sendKeys("Camisa Sonar");
+        browser.sleep(1000);
+        element(by.id('estilo')).sendKeys("Manga Larga");
+        browser.sleep(1000);
+        element(by.id("precio")).sendKeys(20);
+        browser.sleep(1000);
+        element(by.id("stock")).sendKeys(1);
+        browser.sleep(1000);
+        element(by.id('estado')).click();
+        browser.sleep(1000);
+        element(by.id('botonCrearPrenda')).click();
+        browser.sleep(1000);
+        element(by.buttonText('OK')).click();
+        browser.sleep(1000);
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/prenda-form');
     });
-  })
+})
 
-  describe('Boton nueva urgencia', function() {
-    it('crear urgencia', function() {
-      browser.get('http://localhost:4200/');
-  
-      element(by.id('crearUrgencia')).click();
-  
-      expect(browser.getCurrentUrl()).toBe('http://localhost:4200/urgencia-form'); 
+describe('Crear producto', function() {
+    it('Creacion nuevo producto', function() {
+        browser.get('http://localhost:4200/prenda-form');
+        element(by.id('codigoPrenda')).sendKeys(989898);
+        browser.sleep(1000);
+        element(by.id('descripcion')).sendKeys("Camisa Jenkins");
+        browser.sleep(1000);
+        element(by.id('estilo')).sendKeys("Polo");
+        browser.sleep(1000);
+        element(by.id("precio")).sendKeys(30);
+        browser.sleep(1000);
+        element(by.id("stock")).sendKeys(1);
+        browser.sleep(1000);
+        element(by.id('estado')).click();
+        browser.sleep(1000);
+        element(by.id('botonCrearPrenda')).click();
+        browser.sleep(1000);
+        element(by.buttonText('OK')).click();
+        browser.sleep(1000);
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/prenda-form');
     });
-  });
+})
 
 
-  describe('Boton facturar urgencia', function() {
-    it('facturar urgencia', function() {
-      browser.get('http://localhost:4200/urgencias');
-  
-      element(by.id('botonFacturar')).click();
-      element(by.buttonText('SI')).click();
+describe('Boton crear cliente', function() {
+    it('crear cliente', function() {
+        browser.get('http://localhost:4200/');
 
+        element(by.id('crearCliente')).click();
 
-      expect(browser.getCurrentUrl()).toBe('http://localhost:4200/factura/1094942293'); 
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/cliente-form');
     });
-  });
+});
 
-  describe('Facturar', function() {
-    it('Facturar', function() {
-      browser.get('http://localhost:4200/factura/1094942293');
-      element(by.id('facturar')).click();
-      element(by.buttonText('SI')).click();
-      
-  
-      expect(browser.getCurrentUrl()).toBe('http://localhost:4200/urgencias'); 
+describe('Crear producto', function() {
+    it('Creacion nuevo producto', function() {
+        browser.get('http://localhost:4200/cliente-form');
+        element(by.id('identificacion')).sendKeys(1094900333);
+        browser.sleep(1000);
+        element(by.id('nombre')).sendKeys("Jeison Julian");
+        browser.sleep(1000);
+        element(by.id('apellido')).sendKeys("Fajardo Salinas");
+        browser.sleep(1000);
+        element(by.id("fechaNacimiento")).sendKeys("31/10/1988");
+        browser.sleep(1000);
+        element(by.id("correo")).sendKeys("jjb@ceiba.com.co");
+        browser.sleep(1000);
+        element(by.id('celular')).sendKeys(3117630511);
+        browser.sleep(1000);
+        element(by.id('ciudad')).sendKeys("Medellín");
+        browser.sleep(1000);
+        element(by.id('direccionEntrega')).sendKeys("B/ Rodeo Alto");
+        browser.sleep(1000);
+        element(by.id("usuario")).sendKeys("jjbs");
+        browser.sleep(1000);
+        element(by.id("password")).sendKeys("123456");
+        browser.sleep(1000);
+        element(by.id('botonCrearCliente')).click();
+        browser.sleep(1000);
+        element(by.buttonText('OK')).click();
+        browser.sleep(1000);
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/cliente-form');
     });
-  })
+})
 
-  ;
+
+
+describe('Boton crear pedido', function() {
+    it('crear pedido', function() {
+        browser.get('http://localhost:4200/tienda');
+
+        element(by.id('crearPedido')).click();
+
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/pedido-form');
+    });
+});
+
+describe('Crear pedido', function() {
+    it('Creacion nuevo pedido', function() {
+        browser.get('http://localhost:4200/pedido-form');
+        element(by.id('numeroOrden')).sendKeys(99);
+        element(by.id('identificacionCliente')).sendKeys(1094900333);
+        element(by.id('botonCrearPedido')).click();
+        element(by.id('codigoPrenda')).sendKeys(99999);
+        element(by.id('CantidadPrenda')).sendKeys(2);
+        browser.sleep(1000);
+        element(by.id('botonCrearOrden')).click();
+        element(by.buttonText('OK')).click();
+        element(by.id('codigoPrenda')).sendKeys(989898);
+        element(by.id('CantidadPrenda')).sendKeys(1);
+        browser.sleep(1000);
+        element(by.id('botonCrearOrden')).click();
+        element(by.buttonText('OK')).click();
+        browser.sleep(1000);
+        element(by.id('botonNuevoPedido')).click();
+        browser.sleep(1000);
+        element(by.buttonText('OK')).click();
+        browser.sleep(1000);
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/pedido-form');
+    });
+});

@@ -1,27 +1,31 @@
-<h1>Bienvenidos a su tienda</h1>
+<h1 style="text-align: center;">
+    Bienvenidos a su tienda</h1>
 
+<div class="container" style="text-align: center;">
+    <img src="/src/DevStyle.png">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DEVSTYLE</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <a class="navbar-brand" href="#">DEVSTYLE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <div style="margin: 2px;">
-                <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/prenda-form']" type="submit">Producto</button>
-            </div>
-            <div style="margin: 2px;">
-                <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/cliente-form']" type="submit">Cliente</button>
-            </div>
-            <div style="margin: 2px;">
-                <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/pedido-form']" type="submit">Pedido</button>
-            </div>
-            <div style="margin: 2px;">
-                <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/factura-form']" type="submit">Facturar</button>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <div style="margin: 2px;">
+                    <button id="crearProducto" class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/prenda-form']" type="submit">Producto</button>
+                </div>
+                <div style="margin: 2px;">
+                    <button id="crearCliente" class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/cliente-form']" type="submit">Cliente</button>
+                </div>
+                <div style="margin: 2px;">
+                    <button id="crearPedido" class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/pedido-form']" type="submit">Pedido</button>
+                </div>
+                <div style="margin: 2px;">
+                    <button id="generarFactura" class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/factura-form']" type="submit">Facturar</button>
+                </div>
 
-        </ul>
-    </div>
-</nav>
+            </ul>
+        </div>
+    </nav>
+</div>

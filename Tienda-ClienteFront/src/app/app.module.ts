@@ -18,7 +18,7 @@ import { defineLocale } from "ngx-bootstrap/chronos";
 import es from "@angular/common/locales/es";
 import { registerLocaleData } from "@angular/common";
 import { LOCALE_ID } from "@angular/core";
-import { MostrarFacturaComponent } from './feature/mostrar-factura/mostrar-factura.component';
+
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
@@ -31,7 +31,6 @@ registerLocaleData(es);
     AppComponent,
     TiendaComponent,
     CrearPrendaComponent,
-    MostrarFacturaComponent,
     CrearPrendaComponent,
     CrearClienteComponent,
     CrearPedidoComponent,

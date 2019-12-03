@@ -118,7 +118,7 @@ export class CrearClienteComponent implements OnInit {
         if (result) {
           swal({
             title: this.translate.instant("alerts.success"),
-            text: this.translate.instant("alerts.stored_urgencia"),
+            text: "Se ha registrado el cliente con exito",
             type: "success",
             showCancelButton: false,
             confirmButtonColor: "#3085d6",
