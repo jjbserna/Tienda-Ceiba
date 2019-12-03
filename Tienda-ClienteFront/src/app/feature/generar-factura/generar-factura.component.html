@@ -9,7 +9,7 @@
                 <div class="form">
                     <form [formGroup]="myForm">
                         <div class="col-md-8">
-                            <input id="fname" name="name" type="number" formControlName="numeroOrden" placeholder="Numero de Orden" class="form-control">
+                            <input id="numeroOrden" name="name" type="number" formControlName="numeroOrden" placeholder="Numero de Orden" class="form-control">
                         </div>
                         <p>
 
@@ -19,9 +19,9 @@
                         </button>
                         <p></p>
 
-                        <table class="table-responsive-sm">
+                        <table class="table table-sm table-borderless table-striped">
                             <thead>
-                                <tr>
+                                <tr class="table-secondary">
                                     <th scope="col">Cliente</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido</th>
@@ -32,21 +32,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let pedido of listaPedidoPrenda; let ultimo=last;">
-                                    <td>{{ pedido.pedidoId.clienteId.identificacion}}</td>
-                                    <td>{{ pedido.pedidoId.clienteId.nombre}}</td>
-                                    <td>{{ pedido.pedidoId.clienteId.apellido}}</td>
-                                    <td>{{ pedido.pedidoId.numeroOrden}}</td>
-                                    <td>{{ pedido.pedidoId.fechaPedido}}</td>
-                                    <td>{{ pedido.pedidoId.fechaEntrega}}</td>
-                                    <td>{{ pedido.valorTotal}}</td>
+                                <tr *ngFor="let pedido of listaPedidoPrenda; last as isLast" [ngClass]="{last: last }" class="last table-success">
+                                    <td *ngIf="isLast">{{ pedido.pedidoId.clienteId.identificacion}}</td>
+                                    <td *ngIf="isLast">{{ pedido.pedidoId.clienteId.nombre}}</td>
+                                    <td *ngIf="isLast">{{ pedido.pedidoId.clienteId.apellido}}</td>
+                                    <td *ngIf="isLast">{{ pedido.pedidoId.numeroOrden}}</td>
+                                    <td *ngIf="isLast">{{ pedido.pedidoId.fechaPedido}}</td>
+                                    <td *ngIf="isLast">{{ pedido.pedidoId.fechaEntrega}}</td>
+                                    <td *ngIf="isLast">{{ pedido.valorTotal}}</td>
                                 </tr>
                             </tbody>
                         </table>
                         <p></p>
                         <hr>
                         <table class="table table-bordered">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Codigo de Prenda</th>
                                     <th scope="col">Descripcion</th>
@@ -70,7 +70,7 @@
                     </form>
 
                     <p> </p>
-                    <button class="btn btn-outline-success my-2 my-sm-0" (click)="volver()">
+                    <button id="volver" class="btn btn-outline-success my-2 my-sm-0" (click)="volver()">
                         volver
                     </button>
                 </div>

@@ -143,7 +143,17 @@ export class CrearClienteComponent implements OnInit {
           });
         }
       }, err => {
-        console.log(err);
+        swal({
+          title: this.translate.instant("alerts.error"),
+          text: "Error de negocio",
+          type: "error",
+          showCancelButton: false,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: this.translate.instant("buttons.ok"),
+        }).then(result => {
+          return false;
+        });
       });
   }
 

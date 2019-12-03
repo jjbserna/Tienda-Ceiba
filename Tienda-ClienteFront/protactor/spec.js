@@ -22,7 +22,7 @@ describe('Boton crear producto', function() {
 describe('Crear producto', function() {
     it('Creacion nuevo producto', function() {
         browser.get('http://localhost:4200/prenda-form');
-        element(by.id('codigoPrenda')).sendKeys(99999);
+        element(by.id('codigoPrenda')).sendKeys(999999);
         browser.sleep(1000);
         element(by.id('descripcion')).sendKeys("Camisa Sonar");
         browser.sleep(1000);
@@ -83,7 +83,7 @@ describe('Crear producto', function() {
         browser.sleep(1000);
         element(by.id('nombre')).sendKeys("Jeison Julian");
         browser.sleep(1000);
-        element(by.id('apellido')).sendKeys("Fajardo Salinas");
+        element(by.id('apellido')).sendKeys("Barbosa Serna");
         browser.sleep(1000);
         element(by.id("fechaNacimiento")).sendKeys("31/10/1988");
         browser.sleep(1000);
@@ -141,5 +141,28 @@ describe('Crear pedido', function() {
         element(by.buttonText('OK')).click();
         browser.sleep(1000);
         expect(browser.getCurrentUrl()).toBe('http://localhost:4200/pedido-form');
+    });
+});
+
+describe('Boton generar factura', function() {
+    it('generar factura', function() {
+        browser.get('http://localhost:4200/tienda');
+
+        element(by.id('generarFactura')).click();
+
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/factura-form');
+    });
+});
+
+
+describe('Generar factura', function() {
+    it('Generacion de factura', function() {
+        browser.get('http://localhost:4200/factura-form');
+        element(by.id('numeroOrden')).sendKeys(99);
+        element(by.id('facturar')).click();
+        element(by.buttonText('volver')).click();
+        browser.sleep(1000);
+        element(by.buttonText('SI')).click();
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/tienda');
     });
 });
