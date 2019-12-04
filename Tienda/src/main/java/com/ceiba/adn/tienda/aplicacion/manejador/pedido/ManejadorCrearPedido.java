@@ -4,6 +4,7 @@
 package com.ceiba.adn.tienda.aplicacion.manejador.pedido;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ceiba.adn.tienda.aplicacion.comando.ComandoPedido;
 import com.ceiba.adn.tienda.aplicacion.fabrica.FabricaPedido;
@@ -28,7 +29,7 @@ public class ManejadorCrearPedido {
 			this.fabricaPedido = fabricaPedido;
 		}
 		
-		
+		@Transactional
 		public ComandoPedido crear(ComandoPedido comandoPedido) {
 			Pedido pedido=fabricaPedido.crearPedido(comandoPedido);
 			return servicioCrearPedido.crear(pedido);

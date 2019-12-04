@@ -125,7 +125,7 @@ describe('Crear pedido', function() {
         element(by.id('numeroOrden')).sendKeys(99);
         element(by.id('identificacionCliente')).sendKeys(1094900333);
         element(by.id('botonCrearPedido')).click();
-        element(by.id('codigoPrenda')).sendKeys(99999);
+        element(by.id('codigoPrenda')).sendKeys(999999);
         element(by.id('CantidadPrenda')).sendKeys(2);
         browser.sleep(1000);
         element(by.id('botonCrearOrden')).click();
