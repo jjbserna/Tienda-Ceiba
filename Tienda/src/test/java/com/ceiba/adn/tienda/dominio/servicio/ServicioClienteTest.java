@@ -19,6 +19,7 @@ import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
 import com.ceiba.adn.tienda.dominio.servicio.cliente.ServicioActualizarCliente;
 import com.ceiba.adn.tienda.dominio.servicio.cliente.ServicioCrearCliente;
 import com.ceiba.adn.tienda.dominio.servicio.cliente.ServicioEliminarCliente;
+import com.ceiba.adn.tienda.dominio.testdatabuilder.ClienteTestDataBuilder;
 
 /**
  * @author jeison.barbosa
@@ -41,7 +42,7 @@ public class ServicioClienteTest {
 	public void crearTest() {
 		// arrange
 		RepositorioCliente repositorioCliente = Mockito.mock(RepositorioCliente.class);
-		ComandoCliente comandoCliente = new ComandoClienteTestDataBuilder().build();
+		Cliente comandoCliente = new ClienteTestDataBuilder().build();
 		Cliente cliente = new Cliente(comandoCliente.getIdCliente(), comandoCliente.getIdentificacion(),
 				comandoCliente.getNombre(), comandoCliente.getApellido(), comandoCliente.getFechaNacimiento(),
 				comandoCliente.getCorreo(), comandoCliente.getCelular(), comandoCliente.getCiudad(),

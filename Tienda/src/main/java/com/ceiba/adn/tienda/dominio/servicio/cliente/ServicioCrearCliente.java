@@ -3,7 +3,6 @@
  */
 package com.ceiba.adn.tienda.dominio.servicio.cliente;
 
-import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
 import com.ceiba.adn.tienda.dominio.excepcion.ExcepcionVenta;
 import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
@@ -29,8 +28,8 @@ public class ServicioCrearCliente {
 
 
 
-	public ComandoCliente agregar(Cliente cliente) {
-		ComandoCliente comandoCliente = repositorioCliente.buscarPorCedula(cliente.getIdentificacion());
+	public Cliente agregar(Cliente cliente) {
+		Cliente comandoCliente = repositorioCliente.buscarPorCedula(cliente.getIdentificacion());
 		if (comandoCliente==null) {
 			return repositorioCliente.agregar(cliente);
 		}

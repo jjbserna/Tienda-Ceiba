@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.dominio.servicio.cliente.ServicioListarCliente;
 
 /**
@@ -29,7 +29,7 @@ public class ManejadorListarCliente {
 	}
 
 
-	public List<ComandoCliente> listar(){
+	public List<Cliente> listar(){
 		return servicioListarCliente.listar();
 	}
 }

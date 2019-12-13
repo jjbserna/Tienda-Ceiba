@@ -30,7 +30,7 @@ public class ManejadorCrearCliente {
 	}
 	
 	
-	public ComandoCliente agregar(ComandoCliente comandoCliente) {
+	public Cliente agregar(ComandoCliente comandoCliente) {
 		Cliente cliente =this.fabricaCliente.crearCliente(comandoCliente);
 		return servicioCrearCliente.agregar(cliente);
 	}

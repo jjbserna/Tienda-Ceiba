@@ -91,7 +91,7 @@ public class ServicioPedidoTest {
 		when(repositorioPedido.buscar(pedido.getNumeroOrden())).thenReturn(null);
 		ComandoPedido comandoPedido = new ComandoPedido(pedido.getIdPedido(), pedido.getNumeroOrden(),
 				pedido.getFechaPedido(), pedido.getFechaEntrega(), cliente);
-		ComandoCliente comandoCliete = new ComandoCliente();
+		Cliente comandoCliete = new Cliente();
 		comandoCliete.setIdCliente(cliente.getIdCliente());
 		comandoCliete.setIdentificacion(cliente.getIdentificacion());
 		when(repositorioCliente.buscarPorCedula(comandoPedido.getClienteId().getIdCliente())).thenReturn(comandoCliete);

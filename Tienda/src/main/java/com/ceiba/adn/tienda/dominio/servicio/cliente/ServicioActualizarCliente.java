@@ -25,8 +25,8 @@ public class ServicioActualizarCliente {
 	}
 	
 	
-	public ComandoCliente actualizar(Cliente cliente) {
-	ComandoCliente clienteActualizar=repositorioCliente.buscarPorCedula(cliente.getIdentificacion());
+	public Cliente actualizar(Cliente cliente) {
+	Cliente clienteActualizar=repositorioCliente.buscarPorCedula(cliente.getIdentificacion());
 	if (clienteActualizar!=null) {
 		cliente.setIdCliente(clienteActualizar.getIdCliente());
 		return repositorioCliente.actualizar(cliente);

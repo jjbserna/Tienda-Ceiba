@@ -22,6 +22,9 @@ import { LOCALE_ID } from "@angular/core";
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AboutComponent } from './feature/about/about.component';
+
 
 defineLocale("es", esLocale);
 registerLocaleData(es);
@@ -34,7 +37,9 @@ registerLocaleData(es);
     CrearPrendaComponent,
     CrearClienteComponent,
     CrearPedidoComponent,
-    GenerarFacturaComponent
+    GenerarFacturaComponent,
+    NavbarComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

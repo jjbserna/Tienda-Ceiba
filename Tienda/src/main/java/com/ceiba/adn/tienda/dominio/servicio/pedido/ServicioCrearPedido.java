@@ -41,7 +41,7 @@ public class ServicioCrearPedido {
 		}
 		ComandoPedido comandoPedido = repositorioPedido.buscar(pedido.getNumeroOrden());
 		if (comandoPedido == null) {
-			ComandoCliente comandoCliente = repositorioCliente.buscarPorCedula(pedido.getClienteId().getIdCliente());
+			Cliente comandoCliente = repositorioCliente.buscarPorCedula(pedido.getClienteId().getIdCliente());
 			if (comandoCliente != null) {
 				Cliente cliente = new Cliente();
 				cliente.setIdCliente(comandoCliente.getIdCliente());

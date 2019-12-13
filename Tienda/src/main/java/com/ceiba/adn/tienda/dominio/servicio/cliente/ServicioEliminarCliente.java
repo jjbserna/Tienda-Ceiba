@@ -3,7 +3,7 @@
  */
 package com.ceiba.adn.tienda.dominio.servicio.cliente;
 
-import com.ceiba.adn.tienda.aplicacion.comando.ComandoCliente;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 import com.ceiba.adn.tienda.dominio.repositorio.RepositorioCliente;
 
 /**
@@ -24,7 +24,7 @@ public class ServicioEliminarCliente {
 	
 	
 	public boolean eliminar(int identificacion) {
-		ComandoCliente comandoCliente=repositorioCliente.buscarPorCedula(identificacion);
+		Cliente comandoCliente=repositorioCliente.buscarPorCedula(identificacion);
 		if(comandoCliente!=null) {
 			repositorioCliente.eliminar(identificacion);
 			return true;

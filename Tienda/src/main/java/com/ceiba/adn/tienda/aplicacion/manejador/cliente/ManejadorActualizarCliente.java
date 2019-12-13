@@ -28,7 +28,7 @@ public class ManejadorActualizarCliente {
 		this.fabricaCliente = fabricaCliente;
 	}
 	
-	public ComandoCliente actualizar(ComandoCliente comandoCliente) {
+	public Cliente actualizar(ComandoCliente comandoCliente) {
 		Cliente cliente=fabricaCliente.crearCliente(comandoCliente);
 		return servicioActualizar.actualizar(cliente);
 	}

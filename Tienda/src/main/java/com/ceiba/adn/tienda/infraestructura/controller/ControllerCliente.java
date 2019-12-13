@@ -19,6 +19,7 @@ import com.ceiba.adn.tienda.aplicacion.manejador.cliente.ManejadorActualizarClie
 import com.ceiba.adn.tienda.aplicacion.manejador.cliente.ManejadorCrearCliente;
 import com.ceiba.adn.tienda.aplicacion.manejador.cliente.ManejadorEliminarCliente;
 import com.ceiba.adn.tienda.aplicacion.manejador.cliente.ManejadorListarCliente;
+import com.ceiba.adn.tienda.dominio.modelo.Cliente;
 
 /**
  * @author jeison.barbosa
@@ -45,12 +46,12 @@ public class ControllerCliente {
 	}
 
 	@PostMapping("/crear")
-	public ComandoCliente crear(@RequestBody ComandoCliente comandoCliente) {
+	public Cliente crear(@RequestBody ComandoCliente comandoCliente) {
 		return manejadorCrearCliente.agregar(comandoCliente);
 	}
 
 	@GetMapping
-	public List<ComandoCliente> listar() {
+	public List<Cliente> listar() {
 		return manejadorListarCliente.listar();
 	}
 
@@ -60,7 +61,7 @@ public class ControllerCliente {
 	}
 	
 	@PutMapping
-	public ComandoCliente actualizar(@RequestBody ComandoCliente comandoCliente) {
+	public Cliente actualizar(@RequestBody ComandoCliente comandoCliente) {
 		return manejadorActualizarCliente.actualizar(comandoCliente);
 	}
 }

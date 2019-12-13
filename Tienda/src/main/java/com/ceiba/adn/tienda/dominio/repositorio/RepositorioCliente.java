@@ -14,15 +14,15 @@ import com.ceiba.adn.tienda.dominio.modelo.Cliente;
  */
 public interface RepositorioCliente {
 	
-	ComandoCliente agregar(Cliente cliente);
+	Cliente agregar(Cliente cliente);
 
-	List<ComandoCliente> listar();
+	List<Cliente> listar();
 
 	void eliminar(int cedula);
 	
-	ComandoCliente buscarPorCedula(int cedula);
+	Cliente buscarPorCedula(int cedula);
 	
-	ComandoCliente actualizar(Cliente cliente);
+	Cliente actualizar(Cliente cliente);
 	
 	ComandoCliente buscarPorId(int idCliente);
 }

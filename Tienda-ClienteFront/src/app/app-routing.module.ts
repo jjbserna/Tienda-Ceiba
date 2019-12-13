@@ -5,6 +5,9 @@ import { CrearPrendaComponent } from './feature/crear-prenda/crear-prenda.compon
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AboutComponent } from './feature/about/about.component';
+
 
 
 const routes: Routes = [
@@ -17,6 +20,9 @@ const routes: Routes = [
       { path: "cliente-form", component: CrearClienteComponent },
       { path: "pedido-form", component: CrearPedidoComponent },
       { path: "factura-form", component: GenerarFacturaComponent },
+      { path: "heroes-form", component: NavbarComponent },
+      { path: "about-form", component: AboutComponent },
+
 
     ]
   }
