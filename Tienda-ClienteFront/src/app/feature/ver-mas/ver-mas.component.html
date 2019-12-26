@@ -1,0 +1,17 @@
+<h1 class="animated fadeIn">{{ heroe.nombre }}</h1>
+<small>{{ heroe.aparicion }}</small>
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-4" >
+    <img [src]="heroe.img" [alt]="heroe.nombre" />
+  </div>
+  <div class="col-md-6 center" >
+    <img class="img-logo" src={{logo}} alt="logo" />
+    <br/>
+  </div>
+  <br />
+  <div class="col-md-8">
+    <p class="text-primary">{{ heroe.bio }}</p>
+    <a [routerLink]="['/about-form']" class="btn btn-outline-success">Regresar</a>
+  </div>
+</div>

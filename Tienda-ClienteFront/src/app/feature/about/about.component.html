@@ -37,58 +37,14 @@
 </div>
 
 <div class="card-columns">
-    <div class="card">
-        <img src="assets/img/aquaman.png" class="card-img-top" alt="...">
+    <div class="card animated fadeIn fast" *ngFor="let lista_heroe of heroes; let i=index">
+        <img src={{lista_heroe.img}} class="card-img-top" [alt]="lista_heroe.nombre">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="assets/img/batman.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="assets/img/daredevil.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="assets/img/hulk.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="assets/img/linterna-verde.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-        </div>
-    </div>
-    <div class="card">
-        <img src="assets/img/spiderman.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
+            <h5 class="card-title">{{lista_heroe.nombre}}</h5>
+            <p class="card-text">{{lista_heroe.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{lista_heroe.casa}} {{lista_heroe.aparicion}}</small></p>
+            <button (click)="verMas(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
+            <a [routerLink]="['/ver-mas-form',i]">Ver mas link...</a>
         </div>
     </div>
 </div>

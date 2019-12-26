@@ -19,11 +19,15 @@ import es from "@angular/common/locales/es";
 import { registerLocaleData } from "@angular/common";
 import { LOCALE_ID } from "@angular/core";
 
+//servicios
+import { HeroService } from './servicios/hero.service';
+
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './feature/about/about.component';
+import { VerMasComponent } from './feature/ver-mas/ver-mas.component';
 
 
 defineLocale("es", esLocale);
@@ -40,6 +44,7 @@ registerLocaleData(es);
     GenerarFacturaComponent,
     NavbarComponent,
     AboutComponent,
+    VerMasComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,9 +62,12 @@ registerLocaleData(es);
     })
   ],
   providers: [
+    HeroService,
     {
+     
       provide: LOCALE_ID,
       useValue: "es-ES"
+      
     }
   ],
   bootstrap: [AppComponent]
