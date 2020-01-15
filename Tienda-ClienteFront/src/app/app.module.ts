@@ -21,7 +21,6 @@ import { LOCALE_ID } from "@angular/core";
 
 //servicios
 import { HeroService } from './servicios/hero.service';
-
 import { CrearClienteComponent } from './feature/crear-cliente/crear-cliente.component';
 import { CrearPedidoComponent } from './feature/crear-pedido/crear-pedido.component';
 import { GenerarFacturaComponent } from './feature/generar-factura/generar-factura.component';
