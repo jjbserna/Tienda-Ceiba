@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../../servicios/hero.service';
 
-
-
-
-
 @Component({
   selector: 'app-ver-mas',
   templateUrl: './ver-mas.component.html',

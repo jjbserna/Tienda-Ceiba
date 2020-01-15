@@ -8,6 +8,8 @@ import { GenerarFacturaComponent } from './feature/generar-factura/generar-factu
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './feature/about/about.component';
 import { VerMasComponent } from './feature/ver-mas/ver-mas.component';
+import { BuscarHeroeComponent } from './feature/buscar-heroe/buscar-heroe.component';
+
 
 
 
@@ -25,6 +27,7 @@ const routes: Routes = [
       { path: "heroes-form", component: NavbarComponent },
       { path: "about-form", component: AboutComponent },
       { path: "ver-mas-form/:id", component: VerMasComponent },
+      { path: "buscar-heroe-form/:termino", component: BuscarHeroeComponent },
      
 
 

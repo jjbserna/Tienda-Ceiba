@@ -28,6 +28,8 @@ import { GenerarFacturaComponent } from './feature/generar-factura/generar-factu
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './feature/about/about.component';
 import { VerMasComponent } from './feature/ver-mas/ver-mas.component';
+import { BuscarHeroeComponent } from './feature/buscar-heroe/buscar-heroe.component';
+import { MostrarContraseniaPipe } from './pipe/mostrar-contrasenia.pipe';
 
 
 defineLocale("es", esLocale);
@@ -45,6 +47,8 @@ registerLocaleData(es);
     NavbarComponent,
     AboutComponent,
     VerMasComponent,
+    BuscarHeroeComponent,
+    MostrarContraseniaPipe,
   ],
   imports: [
     BrowserModule,

@@ -68,6 +68,18 @@ export class HeroService {
     return this.heroes[id];
   }
   
+  public buscarHeroes(termino:string) : Heroe[] {
+    let heroesArr:Heroe[]=[];
+   
+    for (let heroeNuevo of this.heroes) {
+      let nombre=heroeNuevo.nombre.toLowerCase();
+      if (nombre.indexOf( termino.toLowerCase())>=0) {
+        heroesArr.push( heroeNuevo);
+      }
+    }
+    return heroesArr;
+  }
+  
 
   constructor() { 
     console.log('servicio listo para usarse');
