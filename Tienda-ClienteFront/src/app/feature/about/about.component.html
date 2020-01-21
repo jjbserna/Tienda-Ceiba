@@ -43,7 +43,9 @@
             <h5 class="card-title">{{lista_heroe.nombre}}</h5>
             <p class="card-text">{{lista_heroe.bio}}</p>
             <p class="card-text"><small class="text-muted">{{lista_heroe.casa}} {{lista_heroe.aparicion}}</small></p>
+            <!--Opción por clicl para enrutar con un id-->
             <button (click)="verMas(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
+            <!--Opción con enlace para enrutar con un id-->
             <a [routerLink]="['/ver-mas-form',i]">Ver mas link...</a>
         </div>
     </div>
